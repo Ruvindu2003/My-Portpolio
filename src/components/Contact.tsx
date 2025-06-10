@@ -63,7 +63,7 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       name: 'Email',
-      url: 'mailto:ruvindu@example.com',
+      url: 'mailto:ruvindu22@gmail.com',
       color: 'hover:text-red-600'
     }
   ];
