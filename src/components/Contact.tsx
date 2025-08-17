@@ -118,8 +118,8 @@ const Contact = () => {
   return (
     <>
       <Notification />
-      <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
-        <div className="container mx-auto px-6">
+      <section id="contact" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
+        <div className="container mx-auto px-2 sm:px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_20px_rgba(124,58,237,0.7)]">
               Let's Connect
@@ -130,21 +130,21 @@ const Contact = () => {
             </p>
           </div>
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
               {/* Contact Information */}
               <div>
               <h3 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-8 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)]">Get In Touch</h3>
               
-              <div className="space-y-6 mb-8">
+              <div className="space-y-4 sm:space-y-6 mb-8">
                 {contactInfo.map((info, index) => (
                   <a
                     key={index}
                     href={info.action}
                     target={info.action.startsWith('http') ? '_blank' : '_self'}
                     rel={info.action.startsWith('http') ? 'noopener noreferrer' : ''}
-                    className="flex items-center p-4 bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black/90 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1 group border-2 border-purple-700 hover:border-pink-500 backdrop-blur-lg"
+                    className="flex items-center p-3 sm:p-4 bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black/90 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1 group border-2 border-purple-700 hover:border-pink-500 backdrop-blur-lg"
                   >
-                    <div className="flex items-center justify-center w-12 h-12 bg-black rounded-lg mr-4 group-hover:bg-pink-900 transition-colors duration-300 border-2 border-blue-700">
+                    <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-black rounded-lg mr-3 sm:mr-4 group-hover:bg-pink-900 transition-colors duration-300 border-2 border-blue-700">
                       {info.icon}
                     </div>
                     <div>
@@ -160,15 +160,15 @@ const Contact = () => {
 
               {/* Social Links */}
               <div>
-                <h4 className="text-lg font-extrabold text-pink-400 mb-4">Follow Me</h4>
-                <div className="flex space-x-4">
+                <h4 className="text-lg font-extrabold text-pink-400 mb-3 sm:mb-4">Follow Me</h4>
+                <div className="flex flex-wrap gap-3 sm:gap-4">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center justify-center w-12 h-12 bg-black rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-pink-400 border-2 border-blue-700 hover:bg-pink-900 ${social.color}`}
+                      className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-black rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-pink-400 border-2 border-blue-700 hover:bg-pink-900 ${social.color}`}
                       title={social.name}
                     >
                       {social.icon}
@@ -178,7 +178,7 @@ const Contact = () => {
               </div>
 
               {/* Availability Status */}
-              <div className="mt-8 p-4 bg-gradient-to-r from-green-700 to-green-900 border-2 border-green-400 rounded-2xl shadow-lg">
+              <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-gradient-to-r from-green-700 to-green-900 border-2 border-green-400 rounded-2xl shadow-lg">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
                   <span className="text-green-200 font-bold font-mono">Available for new opportunities</span>
@@ -191,11 +191,11 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div>
-              <div className="bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black/90 rounded-2xl shadow-2xl p-8 border-2 border-purple-700 hover:border-pink-500 backdrop-blur-lg">
+              <div className="bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black/90 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 border-2 border-purple-700 hover:border-pink-500 backdrop-blur-lg">
                 <h3 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-6 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)]">Send a Message</h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-bold text-pink-400 mb-2">
                         Full Name
@@ -207,7 +207,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-pink-400 rounded-lg bg-black text-gray-200 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 font-mono"
+                        className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-pink-400 rounded-lg bg-black text-gray-200 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 font-mono text-base sm:text-lg"
                         placeholder="Your name"
                       />
                     </div>
@@ -222,7 +222,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-pink-400 rounded-lg bg-black text-gray-200 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 font-mono"
+                        className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-pink-400 rounded-lg bg-black text-gray-200 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 font-mono text-base sm:text-lg"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -239,7 +239,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-pink-400 rounded-lg bg-black text-gray-200 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 font-mono"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-pink-400 rounded-lg bg-black text-gray-200 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 font-mono text-base sm:text-lg"
                       placeholder="What would you like to discuss?"
                     />
                   </div>
@@ -255,7 +255,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 border border-pink-400 rounded-lg bg-black text-gray-200 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 resize-none font-mono"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-pink-400 rounded-lg bg-black text-gray-200 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 resize-none font-mono text-base sm:text-lg"
                       placeholder="Tell me about your project or inquiry..."
                     ></textarea>
                   </div>
@@ -263,9 +263,9 @@ const Contact = () => {
                   <button
                     onClick={playButtonSound}
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white py-3 px-6 rounded-lg font-extrabold hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center text-lg tracking-wider border-2 border-pink-400"
+                    className="w-full bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white py-3 sm:py-3 px-4 sm:px-6 rounded-lg font-extrabold hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center text-base sm:text-lg tracking-wider border-2 border-pink-400"
                   >
-                    <Send size={22} className="mr-2" />
+                    <Send size={20} className="mr-2" />
                     Send Message
                   </button>
                 </form>
