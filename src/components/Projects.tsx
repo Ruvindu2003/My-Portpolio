@@ -1,3 +1,9 @@
+// Utility to play button sound
+const playButtonSound = () => {
+  const audio = new Audio('/sounds/mixkit-sci-fi-click-900.wav');
+  audio.currentTime = 0;
+  audio.play();
+};
 import React from 'react';
 import { ExternalLink, Github, Calendar, Layers } from 'lucide-react';
 
@@ -66,7 +72,7 @@ const Projects = () => {
   {
     title: 'Library Management System',
   description: 'A user-friendly Library Management System (Desktop) built with JavaFX, featuring book registration, member profiles, issue/return tracking, and smart search functionality. Note: The photo upload feature is currently not working.',
-    image: 'https://images.pexels.com/photos/481516/pexels-photo-481516.jpeg?auto=compress&cs=tinysrgb&w=800',
+  image: '/images/pexels-pixabay-159711.jpg',
     technologies: ['JavaFX', 'MySQL', 'Scene Builder', 'Java'],
     type: 'Desktop Application',
     status: 'Completed',
@@ -185,11 +191,11 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 mt-auto">
-                  <button className="flex items-center px-5 py-2 bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white rounded-xl hover:shadow-xl transition-all duration-300 flex-1 justify-center font-semibold group-hover:from-pink-700 group-hover:to-blue-700 border-2 border-purple-700 hover:border-pink-400">
+                  <button className="flex items-center px-5 py-2 bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white rounded-xl hover:shadow-xl transition-all duration-300 flex-1 justify-center font-semibold group-hover:from-pink-700 group-hover:to-blue-700 border-2 border-purple-700 hover:border-pink-400" onClick={playButtonSound}>
                     <ExternalLink size={18} className="mr-2" />
                     View Project
                   </button>
-                  <button className="flex items-center px-5 py-2 border-2 border-pink-400 text-pink-400 rounded-xl hover:bg-pink-600 hover:text-white transition-all duration-300">
+                  <button className="flex items-center px-5 py-2 border-2 border-pink-400 text-pink-400 rounded-xl hover:bg-pink-600 hover:text-white transition-all duration-300" onClick={playButtonSound}>
                     <Github size={18} />
                   </button>
                 </div>

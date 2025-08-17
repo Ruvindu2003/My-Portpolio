@@ -1,3 +1,9 @@
+// Utility to play button sound
+const playButtonSound = () => {
+  const audio = new Audio('/sounds/mixkit-sci-fi-click-900.wav');
+  audio.currentTime = 0;
+  audio.play();
+};
 import React from 'react';
 import { Heart, Code } from 'lucide-react';
 
@@ -36,6 +42,7 @@ const Footer = () => {
               <button
                 key={link.name}
                 onClick={() => {
+                  playButtonSound();
                   const element = document.querySelector(link.href);
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });

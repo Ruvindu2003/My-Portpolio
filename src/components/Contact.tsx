@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
+// Utility to play button sound
+const playButtonSound = () => {
+  const audio = new Audio('/sounds/mixkit-sci-fi-click-900.wav');
+  audio.currentTime = 0;
+  audio.play();
+};
 import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +15,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [notification, setNotification] = useState<null | { type: 'success' | 'error', message: string }>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,12 +27,51 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    alert('Thank you for your message! I will get back to you soon.');
+    const serviceID = 'service_yl1kg0e';
+    const templateID = 'template_mq0tgfh';
+    const userID = 'sbvQmWdJlwX54lX5T';
+
+    emailjs.send(serviceID, templateID, {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      to_email: 'ruvindusharada22@gmail.com',
+    }, userID)
+      .then(() => {
+        setNotification({ type: 'success', message: 'Message sent! I will get back to you soon.' });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setNotification(null), 4000);
+      })
+      .catch((error: any) => {
+        setNotification({ type: 'error', message: 'Sorry, there was an error sending your message. Please try again later.' });
+        setTimeout(() => setNotification(null), 4000);
+        console.error('EmailJS error:', error);
+      });
   };
+  // Notification component
+  const Notification = () => (
+    notification ? (
+      <div className={`fixed top-8 left-1/2 z-50 transform -translate-x-1/2 px-8 py-5 rounded-2xl shadow-2xl border-2 text-lg font-extrabold flex items-center gap-3 animate-fade-in-up
+        ${notification.type === 'success' ? 'bg-gradient-to-r from-green-700 via-green-900 to-black border-green-400 text-green-200' : 'bg-gradient-to-r from-pink-900 via-red-900 to-black border-pink-400 text-pink-200'}`}
+        style={{ minWidth: 320, maxWidth: '90vw', letterSpacing: 1.2, boxShadow: '0 0 32px 8px #a21caf55' }}
+      >
+        {notification.type === 'success' ? (
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#22d3ee" opacity="0.2"/><path d="M7 13l3 3 7-7" stroke="#22d3ee" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        ) : (
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#f43f5e" opacity="0.2"/><path d="M15 9l-6 6M9 9l6 6" stroke="#f43f5e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        )}
+        <span className="font-mono text-xl drop-shadow-[0_0_10px_rgba(34,211,238,0.7)]">{notification.message}</span>
+      </div>
+    ) : null
+  );
+// EmailJS setup instructions:
+// 1. Go to https://www.emailjs.com/ and sign up.
+// 2. Create an email service and email template (with fields: from_name, from_email, subject, message, to_email).
+// 3. Get your Service ID, Template ID, and Public Key from the EmailJS dashboard.
+// 4. Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' above with your actual values.
+// 5. (In your project root) Run: npm install emailjs-com
+// That's it! Your contact form will send emails to ruvindusharada22@gmail.com.
 
   const contactInfo = [
     {
@@ -69,22 +116,23 @@ const Contact = () => {
   ];
 
   return (
-  <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
-  <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_20px_rgba(124,58,237,0.7)]">
-            Let's Connect
-          </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 rounded-full shadow-lg"></div>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto font-mono">
-            Ready to collaborate on your next project? Let's discuss how we can work together
-          </p>
-        </div>
-
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div>
+    <>
+      <Notification />
+      <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_20px_rgba(124,58,237,0.7)]">
+              Let's Connect
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 rounded-full shadow-lg"></div>
+            <p className="text-2xl text-gray-300 max-w-3xl mx-auto font-mono">
+              Ready to collaborate on your next project? Let's discuss how we can work together
+            </p>
+          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Contact Information */}
+              <div>
               <h3 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-8 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)]">Get In Touch</h3>
               
               <div className="space-y-6 mb-8">
@@ -213,6 +261,7 @@ const Contact = () => {
                   </div>
 
                   <button
+                    onClick={playButtonSound}
                     type="submit"
                     className="w-full bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white py-3 px-6 rounded-lg font-extrabold hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center text-lg tracking-wider border-2 border-pink-400"
                   >
@@ -226,6 +275,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

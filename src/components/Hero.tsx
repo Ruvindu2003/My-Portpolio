@@ -1,3 +1,9 @@
+// Utility to play button sound
+const playButtonSound = () => {
+  const audio = new Audio('/sounds/mixkit-sci-fi-click-900.wav');
+  audio.currentTime = 0;
+  audio.play();
+};
 import React from 'react';
 import { ArrowDown, Download, MapPin } from 'lucide-react';
 
@@ -56,7 +62,7 @@ const Hero = () => {
           {/* Call to Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button 
-              onClick={scrollToAbout}
+              onClick={() => { playButtonSound(); scrollToAbout(); }}
               className="bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white px-10 py-4 rounded-full font-extrabold shadow-lg hover:shadow-pink-500/40 hover:scale-105 transform transition-all duration-300 border-2 border-purple-700 hover:border-pink-400 text-lg tracking-wider"
             >
               Explore My Work
@@ -73,7 +79,7 @@ const Hero = () => {
 
           {/* Scroll Indicator */}
           <button 
-            onClick={scrollToAbout}
+            onClick={() => { playButtonSound(); scrollToAbout(); }}
             className="animate-bounce text-purple-400 hover:text-pink-400 transition-colors duration-300"
           >
             <ArrowDown size={36} />

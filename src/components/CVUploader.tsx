@@ -1,3 +1,9 @@
+// Utility to play button sound
+const playButtonSound = () => {
+  const audio = new Audio('/sounds/mixkit-sci-fi-click-900.wav');
+  audio.currentTime = 0;
+  audio.play();
+};
 import { useRef, useState } from 'react';
 
 const CVUploader = () => {
@@ -29,6 +35,7 @@ const CVUploader = () => {
           className="block w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-blue-600 file:to-purple-600 file:text-white hover:file:bg-blue-700"
         />
         <button
+          onClick={playButtonSound}
           type="submit"
           className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold shadow-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
         >

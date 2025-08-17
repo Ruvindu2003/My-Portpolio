@@ -1,3 +1,9 @@
+// Utility to play button sound
+const playButtonSound = () => {
+  const audio = new Audio('/sounds/mixkit-sci-fi-click-900.wav');
+  audio.currentTime = 0;
+  audio.play();
+};
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 
@@ -46,7 +52,7 @@ const Header = () => {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => { playButtonSound(); scrollToSection(item.href); }}
                 className="text-pink-400 hover:text-white font-bold transition-colors duration-200 tracking-wide"
               >
                 {item.label}
@@ -72,7 +78,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => { playButtonSound(); setIsMenuOpen(!isMenuOpen); }}
             className="md:hidden text-pink-400 hover:text-white transition-colors duration-200"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -86,7 +92,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => { playButtonSound(); scrollToSection(item.href); }}
                   className="block w-full text-left px-6 py-3 text-pink-400 hover:text-white hover:bg-pink-600 transition-colors duration-200 font-bold"
                 >
                   {item.label}

@@ -4,6 +4,20 @@ import { Calendar, MapPin, Briefcase } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
+      title: 'Internship Applicant | Software Engineering',
+      company: 'SYIGEN Ltd.',
+      period: 'August 2025 – Present',
+      location: 'Remote / Sri Lanka',
+      type: 'Internship (Seeking)',
+      responsibilities: [
+        'Currently seeking internship opportunities at SYIGEN Ltd. to contribute and grow as a software engineer.',
+        'Eager to join a dynamic team and work on innovative projects in a real-world environment.',
+        'Actively following SYIGEN company updates and culture on LinkedIn.'
+      ],
+      technologies: ['Java', 'Spring Boot', 'React', 'Teamwork', 'Learning'],
+      link: 'https://www.linkedin.com/company/syigen-ltd/posts/?feedView=all'
+    },
+    {
       title: 'EVO Plan | Full-Stack Developer',
       company: 'Group Project',
       period: 'March 2025 – In Progress',
@@ -63,7 +77,14 @@ const Experience = () => {
                 }`}>
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <h3 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-1 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)]">{exp.title}</h3>
+                      <h3 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-1 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)] flex items-center gap-2">
+                        {exp.title}
+                        {exp.link && (
+                          <a href={exp.link} target="_blank" rel="noopener noreferrer" className="ml-2 text-blue-400 hover:text-pink-400 transition-colors duration-300 underline text-base font-bold">
+                            (SYIGEN LinkedIn)
+                          </a>
+                        )}
+                      </h3>
                       <p className="text-lg font-bold text-pink-400 mb-2">{exp.company}</p>
                       <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300">
                         <div className="flex items-center">
