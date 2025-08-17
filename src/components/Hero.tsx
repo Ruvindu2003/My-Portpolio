@@ -28,10 +28,10 @@ const Hero = () => {
         <div className="text-center">
           {/* Profile Image with Neon Border */}
           <div className="mb-8 flex justify-center">
-            <div className="w-44 h-44 rounded-full bg-gradient-to-br from-blue-700 via-purple-700 to-pink-600 p-2 shadow-[0_0_40px_10px_rgba(124,58,237,0.5)] animate-pulse">
+            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-700 via-purple-700 to-pink-600 p-2 shadow-[0_0_60px_15px_rgba(124,58,237,0.7)] animate-pulse">
               <div className="w-full h-full rounded-full bg-black flex items-center justify-center shadow-inner shadow-blue-900/40">
-                <img 
-                  src="https://avatars.githubusercontent.com/u/183710499?s=400&u=37def603212e355adba088d54e1524ade57ad8e5&v=4" 
+                <img
+                  src="/images/WhatsApp Image 2025-08-17 at 14.53.54_aa94ea14.jpg"
                   alt="Ruvindu Sharadha Ranasingha"
                   className="w-full h-full rounded-full object-cover border-4 border-purple-700 shadow-lg"
                 />
