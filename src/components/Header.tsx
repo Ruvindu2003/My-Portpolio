@@ -33,11 +33,11 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-gradient-to-r from-gray-900 via-purple-900 to-black/90 backdrop-blur-lg shadow-2xl border-b-2 border-purple-700' : 'bg-transparent'
     }`}>
-      <nav className="container mx-auto px-6 py-4">
+  <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <div className="text-3xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(124,58,237,0.7)] tracking-widest">
             RSR
           </div>
 
@@ -47,7 +47,7 @@ const Header = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-pink-400 hover:text-white font-bold transition-colors duration-200 tracking-wide"
               >
                 {item.label}
               </button>
@@ -57,53 +57,53 @@ const Header = () => {
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
             <a href="https://github.com/ruvindu2003" target="_blank" rel="noopener noreferrer" 
-               className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-              <Github size={20} />
+               className="text-pink-400 hover:text-white transition-colors duration-200">
+              <Github size={22} />
             </a>
             <a href="https://linkedin.com/in/ruvindu-ranasingha" target="_blank" rel="noopener noreferrer"
-               className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-              <Linkedin size={20} />
+               className="text-pink-400 hover:text-white transition-colors duration-200">
+              <Linkedin size={22} />
             </a>
-            <a href="ruvindu22sharadha22@gmail.com"
-               className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-              <Mail size={20} />
+            <a href="mailto:ruvinduSharadha22@gmail.com"
+               className="text-pink-400 hover:text-white transition-colors duration-200">
+              <Mail size={22} />
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-700 hover:text-blue-600 transition-colors duration-200"
+            className="md:hidden text-pink-400 hover:text-white transition-colors duration-200"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black shadow-2xl border-t-2 border-purple-700 z-50">
             <div className="py-4">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
+                  className="block w-full text-left px-6 py-3 text-pink-400 hover:text-white hover:bg-pink-600 transition-colors duration-200 font-bold"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="flex items-center justify-center space-x-6 pt-4 border-t mt-4">
+              <div className="flex items-center justify-center space-x-6 pt-4 border-t-2 border-purple-700 mt-4">
                 <a href="https://github.com/ruvindu2003" target="_blank" rel="noopener noreferrer"
-                   className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  <Github size={20} />
+                   className="text-pink-400 hover:text-white transition-colors duration-200">
+                  <Github size={22} />
                 </a>
                 <a href="https://linkedin.com/in/ruvindu-ranasingha" target="_blank" rel="noopener noreferrer"
-                   className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  <Linkedin size={20} />
+                   className="text-pink-400 hover:text-white transition-colors duration-200">
+                  <Linkedin size={22} />
                 </a>
                 <a href="mailto:ruvinduSharadha22@gmail.com"
-                   className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  <Mail size={20} />
+                   className="text-pink-400 hover:text-white transition-colors duration-200">
+                  <Mail size={22} />
                 </a>
               </div>
             </div>

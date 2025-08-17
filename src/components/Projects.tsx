@@ -76,7 +76,7 @@ const Projects = () => {
       'Issue and return tracking',
       'Smart search functionality',
       'Modern UI with Scene Builder',
-  'Photo upload feature is currently not working'
+
     ]
   },
     {
@@ -97,76 +97,75 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+  <section id="projects" className="py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
+  <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Featured Projects
-            </span>
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_20px_rgba(124,58,237,0.7)]">
+            Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 rounded-full shadow-lg"></div>
+          <p className="text-2xl text-gray-300 max-w-3xl mx-auto font-mono">
             Explore my portfolio of full-stack applications, desktop software, and web solutions
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+  <div className="grid lg:grid-cols-2 gap-10">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-100"
+              className="relative group bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black/90 rounded-3xl shadow-2xl overflow-hidden border-2 border-purple-700 hover:border-pink-500 transition-all duration-300 hover:scale-[1.025] hover:shadow-3xl backdrop-blur-lg"
             >
               {/* Project Image */}
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-[2px] opacity-80"
                 />
-                <div className="absolute top-4 right-4 flex flex-col items-end gap-2">
+                <div className="absolute top-4 right-4 flex flex-col items-end gap-2 z-10">
                   {project.title.includes('Internship Project (Web)') && (
-                    <span className="px-3 py-1 rounded-full text-xs font-bold shadow bg-blue-200 text-blue-900 border border-blue-300 mb-1">
+                    <span className="px-3 py-1 rounded-full text-xs font-bold shadow bg-blue-700 text-white border border-blue-400 mb-1 animate-pulse">
                       Student Internship Project
                     </span>
                   )}
                   <span className={`px-3 py-1 rounded-full text-sm font-semibold shadow-md ${
                     project.status === 'In Progress'
-                      ? 'bg-yellow-200 text-yellow-900'
-                      : 'bg-green-200 text-green-900'
+                      ? 'bg-yellow-400 text-yellow-900'
+                      : 'bg-green-400 text-green-900'
                   }`}>
                     {project.status}
                   </span>
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 via-transparent to-transparent group-hover:from-pink-900/80 transition-all duration-500"></div>
               </div>
 
               {/* Project Content */}
-              <div className="p-7">
+              <div className="p-8 pb-7 flex flex-col h-full">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-2xl font-extrabold text-gray-800 drop-shadow-sm">{project.title}</h3>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <Layers size={18} className="mr-1" />
+                  <h3 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)] group-hover:text-pink-400 transition-colors duration-300">{project.title}</h3>
+                  <div className="flex items-center text-sm text-pink-400">
+                    <Layers size={20} className="mr-1" />
                     {project.type}
                   </div>
                 </div>
 
-                <p className="text-gray-700 mb-4 leading-relaxed text-base">
+                <p className="text-lg text-gray-200 mb-4 leading-relaxed font-mono group-hover:text-pink-200 transition-colors duration-300">
                   {project.description}
                 </p>
 
                 {/* Key Features */}
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-800 mb-2">Key Features:</h4>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                  <h4 className="font-semibold text-pink-400 mb-2 group-hover:text-blue-400 transition-colors duration-300">Key Features:</h4>
+                  <ul className="text-base text-gray-300 space-y-1">
                     {project.features.slice(0, 4).map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-gradient-to-br from-blue-400 to-pink-400 rounded-full mt-2 mr-2 flex-shrink-0"></div>
                         {feature}
                       </li>
                     ))}
                   </ul>
                   {project.features.length > 4 && (
-                    <div className="text-xs text-blue-500 mt-1">...and more</div>
+                    <div className="text-xs text-pink-400 mt-1">...and more</div>
                   )}
                 </div>
 
@@ -176,7 +175,7 @@ const Projects = () => {
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold border border-blue-200 shadow-sm"
+                        className="bg-gradient-to-r from-blue-700 to-pink-700 text-white px-3 py-1 rounded-full text-sm font-semibold border border-pink-400 shadow-sm group-hover:bg-pink-600 group-hover:text-pink-100 transition-colors duration-300"
                       >
                         {tech}
                       </span>
@@ -185,13 +184,13 @@ const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <button className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 flex-1 justify-center font-semibold">
-                    <ExternalLink size={16} className="mr-2" />
+                <div className="flex gap-3 mt-auto">
+                  <button className="flex items-center px-5 py-2 bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white rounded-xl hover:shadow-xl transition-all duration-300 flex-1 justify-center font-semibold group-hover:from-pink-700 group-hover:to-blue-700 border-2 border-purple-700 hover:border-pink-400">
+                    <ExternalLink size={18} className="mr-2" />
                     View Project
                   </button>
-                  <button className="flex items-center px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
-                    <Github size={16} />
+                  <button className="flex items-center px-5 py-2 border-2 border-pink-400 text-pink-400 rounded-xl hover:bg-pink-600 hover:text-white transition-all duration-300">
+                    <Github size={18} />
                   </button>
                 </div>
               </div>
