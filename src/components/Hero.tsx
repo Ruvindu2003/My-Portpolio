@@ -67,14 +67,37 @@ const Hero = () => {
             >
               Explore My Work
             </button>
-            <a
-              href="/cv/Ruvindu_vv.pdf"
-              download="Ruvindu_Sharadha_Ranasingha_CV.pdf"
+            <button
+              onClick={async () => {
+                try {
+                  playButtonSound();
+                  const base = import.meta.env.BASE_URL || '/';
+                  const url = `${base.replace(/\/$/, '')}/cv/Ruvindu_vv.pdf`;
+                  const res = await fetch(url, { cache: 'no-cache' });
+                  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                  const ct = res.headers.get('content-type') || '';
+                  if (!ct.includes('pdf')) {
+                    throw new Error('File not found or wrong content-type');
+                  }
+                  const blob = await res.blob();
+                  const blobUrl = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = blobUrl;
+                  a.download = 'Ruvindu_Sharadha_Ranasingha_CV.pdf';
+                  document.body.appendChild(a);
+                  a.click();
+                  a.remove();
+                  URL.revokeObjectURL(blobUrl);
+                } catch (err) {
+                  alert('CV file could not be downloaded. Please try again later.');
+                  console.error('CV download failed:', err);
+                }
+              }}
               className="border-2 border-pink-400 text-pink-400 px-10 py-4 rounded-full font-extrabold hover:bg-pink-600 hover:text-white hover:shadow-lg transition-all duration-300 flex items-center justify-center text-lg tracking-wider"
             >
               <Download className="mr-2" size={22} />
               Download CV
-            </a>
+            </button>
           </div>
 
           {/* Scroll Indicator */}
