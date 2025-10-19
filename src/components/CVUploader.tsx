@@ -16,7 +16,6 @@ const CVUploader = () => {
       setStatus('Please select a file.');
       return;
     }
-    const file = fileInput.current.files[0];
     setStatus('Uploading...');
     // TODO: Integrate with backend/email service
     setTimeout(() => {

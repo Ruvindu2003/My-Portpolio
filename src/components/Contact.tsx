@@ -43,7 +43,7 @@ const Contact = () => {
         setFormData({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setNotification(null), 4000);
       })
-      .catch((error: any) => {
+      .catch((error: unknown) => {
         setNotification({ type: 'error', message: 'Sorry, there was an error sending your message. Please try again later.' });
         setTimeout(() => setNotification(null), 4000);
         console.error('EmailJS error:', error);
@@ -75,7 +75,7 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="text-blue-600\" size={24} />,
+      icon: <Mail className="text-blue-600" size={24} />,
       title: 'Email',
       content: 'ruvindu@example.com',
       action: 'mailto:ruvindusharada22@gmail.com'
@@ -87,7 +87,7 @@ const Contact = () => {
       action: 'tel:+94781001040'
     },
     {
-      icon: <MapPin className="text-teal-600\" size={24} />,
+      icon: <MapPin className="text-teal-600" size={24} />,
       title: 'Location',
       content: 'Nuwara Eliya, Sri Lanka',
       action: 'https://maps.google.com/?q=Nuwara+Eliya+Sri+Lanka'

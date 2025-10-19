@@ -4,8 +4,7 @@ const playButtonSound = () => {
   audio.currentTime = 0;
   audio.play();
 };
-import React from 'react';
-import { ExternalLink, Github, Calendar, Layers } from 'lucide-react';
+import { ExternalLink, Github, Layers } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
