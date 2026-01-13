@@ -5,11 +5,13 @@ const playButtonSound = () => {
   audio.play();
 };
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     let ticking = false;
@@ -27,36 +29,20 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#education', label: 'Education' },
-    { href: '#contact', label: 'Contact' },
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/experience', label: 'Experience' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/skills', label: 'Skills' },
+    { path: '/education', label: 'Education' },
+    { path: '/contact', label: 'Contact' },
   ];
 
-  const scrollToSection = (href: string) => {
-    // Ensure href starts with #
-    const hash = href.startsWith('#') ? href : `#${href.replace('#', '')}`;
-    const element = document.querySelector(hash);
-    
-    if (element) {
-      const offset = 80; // Header height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: Math.max(0, offsetPosition),
-        behavior: 'smooth'
-      });
-      
-      // Update URL hash without triggering scroll
-      if (window.history && window.history.pushState) {
-        window.history.pushState(null, '', hash);
-      }
-    }
+  const handleNavClick = () => {
+    playButtonSound();
     setIsMenuOpen(false);
+    // Smooth scroll to top on navigation
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -65,38 +51,32 @@ const Header = () => {
     }`}>
   <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <button
-            onClick={(e) => {
-              e.preventDefault();
+          <Link
+            to="/"
+            onClick={() => {
               playButtonSound();
-              const element = document.querySelector('#home');
-              if (element) {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth'
-                });
-              }
+              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             className="text-3xl font-extrabold text-terminal-green terminal-glow tracking-widest terminal-button-hover terminal-glitch-text"
           >
             RSR
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={(e) => { 
-                  e.preventDefault();
-                  e.stopPropagation();
-                  playButtonSound(); 
-                  scrollToSection(item.href); 
-                }}
-                className="text-terminal-green hover:text-terminal-blue font-bold transition-colors duration-200 tracking-wide terminal-button-hover terminal-button-press"
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={handleNavClick}
+                className={`font-bold transition-colors duration-200 tracking-wide terminal-button-hover terminal-button-press ${
+                  location.pathname === item.path
+                    ? 'text-terminal-blue terminal-glow'
+                    : 'text-terminal-green hover:text-terminal-blue'
+                }`}
               >
                 <span className="text-terminal-green">$</span> {item.label}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -130,18 +110,18 @@ const Header = () => {
           <div className="md:hidden absolute top-full left-0 right-0 bg-terminal-bg-panel shadow-2xl border-t-2 border-terminal-border z-50">
             <div className="py-4">
               {navItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={(e) => { 
-                    e.preventDefault();
-                    e.stopPropagation();
-                    playButtonSound(); 
-                    scrollToSection(item.href); 
-                  }}
-                  className="block w-full text-left px-6 py-3 text-terminal-green hover:text-terminal-blue hover:bg-terminal-bg-main transition-colors duration-200 font-bold terminal-button-press"
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={handleNavClick}
+                  className={`block w-full text-left px-6 py-3 hover:bg-terminal-bg-main transition-colors duration-200 font-bold terminal-button-press ${
+                    location.pathname === item.path
+                      ? 'text-terminal-blue terminal-glow'
+                      : 'text-terminal-green hover:text-terminal-blue'
+                  }`}
                 >
                   <span className="text-terminal-green">$</span> {item.label}
-                </button>
+                </Link>
               ))}
               <div className="flex items-center justify-center space-x-6 pt-4 border-t-2 border-terminal-border mt-4">
                 <a href="https://github.com/ruvindu2003" target="_blank" rel="noopener noreferrer"

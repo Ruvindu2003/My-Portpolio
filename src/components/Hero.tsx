@@ -165,14 +165,55 @@ const Hero = () => {
             >
               <span className="text-terminal-green">$</span> Explore My Work
             </button>
-            <a
-              href="/cv/Ruvindu_vv.pdf"
-              download="Ruvindu_Sharadha_Ranasingha_CV.pdf"
-              className="border-2 border-terminal-blue text-terminal-blue px-10 py-4 rounded-terminal font-extrabold hover:bg-terminal-green hover:text-terminal-bg-main hover:terminal-glow transition-all duration-300 flex items-center justify-center text-lg tracking-wider gpu-accelerate"
+            <button
+              onClick={async (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                playButtonSound();
+                
+                try {
+                  // Try to fetch and download the file
+                  const response = await fetch('/RuvinduSharadha-resume-2026.pdf');
+                  if (!response.ok) {
+                    throw new Error('File not found');
+                  }
+                  
+                  const blob = await response.blob();
+                  const url = window.URL.createObjectURL(blob);
+                  
+                  // Create download link
+                  const link = document.createElement('a');
+                  link.href = url;
+                  link.download = 'Ruvindu_Sharadha_Ranasingha_Resume_2026.pdf';
+                  
+                  // Append to body, click, and remove
+                  document.body.appendChild(link);
+                  link.click();
+                  
+                  // Clean up
+                  setTimeout(() => {
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(url);
+                  }, 100);
+                } catch (error) {
+                  console.error('Download error:', error);
+                  // Fallback: try direct link
+                  const link = document.createElement('a');
+                  link.href = '/RuvinduSharadha-resume-2026.pdf';
+                  link.download = 'Ruvindu_Sharadha_Ranasingha_Resume_2026.pdf';
+                  link.target = '_blank';
+                  document.body.appendChild(link);
+                  link.click();
+                  setTimeout(() => {
+                    document.body.removeChild(link);
+                  }, 100);
+                }
+              }}
+              className="border-2 border-terminal-blue text-terminal-blue px-10 py-4 rounded-terminal font-extrabold hover:bg-terminal-green hover:text-terminal-bg-main hover:terminal-glow transition-all duration-300 flex items-center justify-center text-lg tracking-wider gpu-accelerate terminal-button-press"
             >
               <Download className="mr-2" size={22} />
               <span className="text-terminal-green">$</span> Download CV
-            </a>
+            </button>
           </div>
 
           {/* Terminal Command Prompt */}

@@ -5,6 +5,8 @@ const playButtonSound = () => {
   audio.play();
 };
 import { ExternalLink, Github, Layers } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
+import GlassCard from './GlassCard';
 
 const Projects = () => {
   const projects = [
@@ -122,10 +124,10 @@ const Projects = () => {
 
   <div className="grid lg:grid-cols-2 gap-10">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="relative group bg-terminal-bg-panel rounded-terminal shadow-2xl overflow-hidden border-2 border-terminal-border hover:border-terminal-green transition-all duration-300 hover:scale-[1.025] hover:terminal-glow gpu-accelerate"
-            >
+            <ScrollReveal key={index} delay={index * 100} direction="up">
+              <div
+                className="relative group glass-effect rounded-terminal shadow-2xl overflow-hidden border-2 border-terminal-border hover:border-terminal-green transition-all duration-300 hover:scale-[1.025] hover:terminal-glow hover-lift gpu-accelerate"
+              >
               {/* Project Image */}
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -205,7 +207,8 @@ const Projects = () => {
                   </button>
                 </div>
               </div>
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
