@@ -40,73 +40,28 @@ const Hero = () => {
             <p className="text-terminal-green text-sm font-mono mb-6 terminal-loading"></p>
           </div>
 
-          {/* Customized Profile Image with Advanced Terminal Styling */}
+          {/* Clean Professional Profile Image */}
           <div className="mb-8 flex justify-center">
-            <div className="relative group">
-              {/* Outer Glow Ring */}
-              <div className="absolute inset-0 rounded-full terminal-glow animate-pulse" style={{ 
-                animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                transform: 'scale(1.1)'
-              }}></div>
+            <div className="relative">
+              {/* Colored Background Circle */}
+              <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-500 -z-10 transform translate-x-8 translate-y-4 opacity-90"></div>
               
-              {/* Main Profile Frame */}
-              <div className="relative w-64 h-64 md:w-72 md:h-72 gpu-accelerate">
-                {/* Corner Brackets */}
-                <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-terminal-green terminal-glow"></div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-terminal-green terminal-glow"></div>
-                <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-terminal-green terminal-glow"></div>
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-terminal-green terminal-glow"></div>
-                
-                {/* Main Image Container */}
-                <div className="relative w-full h-full border-4 border-terminal-green rounded-full p-1 terminal-glow group-hover:border-terminal-blue transition-all duration-500 overflow-hidden">
-                  {/* Animated Border Ring */}
-                  <div className="absolute inset-0 rounded-full border-2 border-terminal-blue opacity-0 group-hover:opacity-100 group-hover:animate-spin-slow transition-opacity duration-500" style={{
-                    animation: 'spin 8s linear infinite'
-                  }}></div>
-                  
-                  {/* Inner Frame */}
-                  <div className="w-full h-full rounded-full bg-terminal-bg-panel border-2 border-terminal-border overflow-hidden relative">
-                    {/* Scanline Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-terminal-green/5 to-transparent pointer-events-none"></div>
-                    
-                    {/* Profile Image */}
-                    <img
-                      src="/images/WhatsApp Image 2025-08-17 at 14.53.54_aa94ea14.jpg"
-                      alt="Ruvindu Sharadha Ranasingha - Software Engineer"
-                      className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-700"
-                    />
-                    
-                    {/* Terminal Overlay on Hover */}
-                    <div className="absolute inset-0 bg-terminal-bg-main/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="text-center">
-                        <p className="text-terminal-green font-mono text-sm font-bold mb-1">root@kali</p>
-                        <p className="text-terminal-blue font-mono text-xs">Software Engineer</p>
-                      </div>
-                    </div>
-                  </div>
+              {/* Profile Image Container */}
+              <div className="relative w-64 h-64 md:w-80 md:h-80 group">
+                <div className="w-full h-full rounded-full overflow-hidden border-4 border-terminal-bg-main shadow-2xl">
+                  {/* Profile Image */}
+                  <img
+                    src="/images/WhatsApp Image 2025-08-17 at 14.53.54_aa94ea14.jpg"
+                    alt="Ruvindu Sharadha Ranasingha - Software Engineer"
+                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                  />
                 </div>
                 
-                {/* Rotating Tech Icons Around Profile */}
-                <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 text-terminal-green terminal-glow animate-bounce" style={{ animationDelay: '0s' }}>
-                    <span className="font-mono text-xs">React</span>
-                  </div>
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-8 text-terminal-blue terminal-glow animate-bounce" style={{ animationDelay: '0.5s' }}>
-                    <span className="font-mono text-xs">Spring</span>
-                  </div>
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 text-terminal-green terminal-glow animate-bounce" style={{ animationDelay: '1s' }}>
-                    <span className="font-mono text-xs">Angular</span>
-                  </div>
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 text-terminal-blue terminal-glow animate-bounce" style={{ animationDelay: '1.5s' }}>
-                    <span className="font-mono text-xs">Java</span>
-                  </div>
+                {/* Status Indicator */}
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-terminal-bg-panel border-2 border-terminal-green px-4 py-1.5 rounded-full shadow-lg">
+                  <div className="w-2.5 h-2.5 bg-terminal-green rounded-full animate-pulse"></div>
+                  <span className="text-terminal-green font-mono text-xs font-bold">ONLINE</span>
                 </div>
-              </div>
-              
-              {/* Status Indicator */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-terminal-bg-panel border-2 border-terminal-green px-3 py-1 rounded-terminal terminal-glow">
-                <div className="w-2 h-2 bg-terminal-green rounded-full animate-pulse"></div>
-                <span className="text-terminal-green font-mono text-xs font-bold">ONLINE</span>
               </div>
             </div>
           </div>
