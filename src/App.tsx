@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,6 +12,8 @@ import OnboardingFlow from './components/OnboardingFlow';
 import { handleHashNavigation } from './utils/scrollUtils';
 
 function App() {
+  const [showMainContent, setShowMainContent] = useState(false);
+
   useEffect(() => {
     // Handle hash navigation on page load
     handleHashNavigation();
@@ -30,16 +32,20 @@ function App() {
 
   return (
     <div className="font-mono bg-terminal-bg-main min-h-screen scroll-smooth">
-      <OnboardingFlow />
-      <Header />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Education />
-      <Contact />
-      <Footer />
+      <OnboardingFlow onComplete={() => setShowMainContent(true)} />
+      {showMainContent && (
+        <>
+          <Header />
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Education />
+          <Contact />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

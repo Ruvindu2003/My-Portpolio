@@ -1,33 +1,30 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import BootScreen from './BootScreen';
 import InteractiveTerminal from './InteractiveTerminal';
 
 type OnboardingStep = 'boot' | 'terminal' | 'complete';
 
-const OnboardingFlow = () => {
-  const [step, setStep] = useState<OnboardingStep>('boot');
-  const [hasSeenOnboarding, setHasSeenOnboarding] = useState(false);
+interface OnboardingFlowProps {
+  onComplete: () => void;
+}
 
-  // Check if user has seen onboarding before
-  useEffect(() => {
-    const seen = localStorage.getItem('hasSeenOnboarding');
-    if (seen === 'true') {
-      setHasSeenOnboarding(true);
-      setStep('complete');
-    }
-  }, []);
+const OnboardingFlow = ({ onComplete }: OnboardingFlowProps) => {
+  // Always start with boot screen - terminal will show every time
+  const [step, setStep] = useState<OnboardingStep>('boot');
 
   const handleBootComplete = () => {
     setStep('terminal');
   };
 
   const handleTerminalComplete = () => {
-    localStorage.setItem('hasSeenOnboarding', 'true');
+    // Terminal completes and shows main content
+    // Will show again on next page load/refresh
     setStep('complete');
+    onComplete();
   };
 
-  // Skip onboarding if already seen
-  if (hasSeenOnboarding || step === 'complete') {
+  // Show terminal flow every time
+  if (step === 'complete') {
     return null;
   }
 
