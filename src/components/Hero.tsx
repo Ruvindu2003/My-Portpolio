@@ -4,83 +4,193 @@ const playButtonSound = () => {
   audio.currentTime = 0;
   audio.play();
 };
-import React from 'react';
 import { ArrowDown, Download, MapPin } from 'lucide-react';
 
 const Hero = () => {
   const scrollToAbout = () => {
     const element = document.querySelector('#about');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 80; // Header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
+      });
     }
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-black">
-      {/* Neon/Glassmorphism Background */}
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-terminal-bg-main terminal-scanline terminal-matrix-bg gpu-accelerate">
+      {/* Terminal Background Glow */}
       <div className="absolute inset-0">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-700 via-purple-700 to-pink-600 rounded-full blur-3xl opacity-60 animate-pulse shadow-2xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-purple-700 via-blue-700 to-pink-600 rounded-full blur-3xl opacity-60 animate-pulse delay-1000 shadow-2xl"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-950/80 to-black/90"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-terminal-green opacity-20 blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-terminal-blue opacity-20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute inset-0 bg-terminal-bg-main"></div>
       </div>
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="container mx-auto px-6 py-20 relative z-10 gpu-accelerate">
         <div className="text-center">
-          {/* Profile Image with Neon Border */}
+          {/* Terminal Command Prompt Style */}
+          <div className="mb-4 text-left max-w-2xl mx-auto">
+            <p className="text-terminal-green text-sm font-mono mb-2">
+              <span className="text-terminal-green">root@kali:~$</span> <span className="text-terminal-text-main">whoami</span>
+            </p>
+            <p className="text-terminal-green text-sm font-mono mb-6 terminal-loading"></p>
+          </div>
+
+          {/* Customized Profile Image with Advanced Terminal Styling */}
           <div className="mb-8 flex justify-center">
-            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-700 via-purple-700 to-pink-600 p-2 shadow-[0_0_60px_15px_rgba(124,58,237,0.7)] animate-pulse">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center shadow-inner shadow-blue-900/40">
-                <img
-                  src="/images/WhatsApp Image 2025-08-17 at 14.53.54_aa94ea14.jpg"
-                  alt="Ruvindu Sharadha Ranasingha"
-                  className="w-full h-full rounded-full object-cover border-4 border-purple-700 shadow-lg"
-                />
+            <div className="relative group">
+              {/* Outer Glow Ring */}
+              <div className="absolute inset-0 rounded-full terminal-glow animate-pulse" style={{ 
+                animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                transform: 'scale(1.1)'
+              }}></div>
+              
+              {/* Main Profile Frame */}
+              <div className="relative w-64 h-64 md:w-72 md:h-72 gpu-accelerate">
+                {/* Corner Brackets */}
+                <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-terminal-green terminal-glow"></div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-terminal-green terminal-glow"></div>
+                <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-terminal-green terminal-glow"></div>
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-terminal-green terminal-glow"></div>
+                
+                {/* Main Image Container */}
+                <div className="relative w-full h-full border-4 border-terminal-green rounded-full p-1 terminal-glow group-hover:border-terminal-blue transition-all duration-500 overflow-hidden">
+                  {/* Animated Border Ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-terminal-blue opacity-0 group-hover:opacity-100 group-hover:animate-spin-slow transition-opacity duration-500" style={{
+                    animation: 'spin 8s linear infinite'
+                  }}></div>
+                  
+                  {/* Inner Frame */}
+                  <div className="w-full h-full rounded-full bg-terminal-bg-panel border-2 border-terminal-border overflow-hidden relative">
+                    {/* Scanline Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-terminal-green/5 to-transparent pointer-events-none"></div>
+                    
+                    {/* Profile Image */}
+                    <img
+                      src="/images/WhatsApp Image 2025-08-17 at 14.53.54_aa94ea14.jpg"
+                      alt="Ruvindu Sharadha Ranasingha - Software Engineer"
+                      className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-700"
+                    />
+                    
+                    {/* Terminal Overlay on Hover */}
+                    <div className="absolute inset-0 bg-terminal-bg-main/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="text-center">
+                        <p className="text-terminal-green font-mono text-sm font-bold mb-1">root@kali</p>
+                        <p className="text-terminal-blue font-mono text-xs">Software Engineer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Rotating Tech Icons Around Profile */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 text-terminal-green terminal-glow animate-bounce" style={{ animationDelay: '0s' }}>
+                    <span className="font-mono text-xs">React</span>
+                  </div>
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-8 text-terminal-blue terminal-glow animate-bounce" style={{ animationDelay: '0.5s' }}>
+                    <span className="font-mono text-xs">Spring</span>
+                  </div>
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 text-terminal-green terminal-glow animate-bounce" style={{ animationDelay: '1s' }}>
+                    <span className="font-mono text-xs">Angular</span>
+                  </div>
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 text-terminal-blue terminal-glow animate-bounce" style={{ animationDelay: '1.5s' }}>
+                    <span className="font-mono text-xs">Java</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Status Indicator */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-terminal-bg-panel border-2 border-terminal-green px-3 py-1 rounded-terminal terminal-glow">
+                <div className="w-2 h-2 bg-terminal-green rounded-full animate-pulse"></div>
+                <span className="text-terminal-green font-mono text-xs font-bold">ONLINE</span>
               </div>
             </div>
           </div>
 
           {/* Name and Title */}
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_20px_rgba(124,58,237,0.7)]">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight gradient-text gpu-accelerate terminal-glitch-text">
             Ruvindu Sharadha
             <br />
-            <span className="text-gray-200 bg-none">Ranasingha</span>
+            <span className="text-terminal-green terminal-cursor terminal-pulse">Ranasingha</span>
           </h1>
 
           <div className="flex items-center justify-center mb-6">
-            <MapPin className="text-pink-400 mr-2 animate-pulse" size={22} />
-            <p className="text-xl text-gray-300 font-mono">Nuwara Eliya, Sri Lanka</p>
+            <MapPin className="text-terminal-green mr-2 animate-pulse" size={22} />
+            <p className="text-xl text-terminal-text-main font-mono">
+              <span className="text-terminal-green">[</span>
+              <span className="text-terminal-blue">Nuwara Eliya, Sri Lanka</span>
+              <span className="text-terminal-green">]</span>
+            </p>
           </div>
 
-          <p className="text-2xl md:text-3xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed font-mono">
-            Aspiring Software Engineer specializing in{' '}
-            <span className="text-blue-400 font-bold">Full-Stack Development</span> with expertise in{' '}
-            <span className="text-purple-400 font-bold">Spring Boot</span>,{' '}
-            <span className="text-pink-400 font-bold">Angular</span>, and{' '}
-            <span className="text-indigo-400 font-bold">React</span>
+          <p className="text-2xl md:text-3xl text-terminal-text-main mb-4 max-w-3xl mx-auto leading-relaxed font-mono">
+            <span className="text-terminal-green">$</span> Aspiring Software Engineer specializing in{' '}
+            <span className="text-terminal-blue font-bold">Full-Stack Development</span> with expertise in{' '}
+            <span className="text-terminal-green font-bold">Spring Boot</span>,{' '}
+            <span className="text-terminal-blue font-bold">Angular</span>, and{' '}
+            <span className="text-terminal-green font-bold">React</span>
           </p>
+          
+          {/* Enhanced Description */}
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="bg-terminal-bg-panel border-2 border-terminal-border p-6 rounded-terminal terminal-glow">
+              <p className="text-lg md:text-xl text-terminal-text-main leading-relaxed font-mono mb-4">
+                <span className="text-terminal-green">[INFO]</span> Passionate developer crafting scalable solutions with modern technologies. 
+                Currently contributing to <span className="text-terminal-blue font-bold">EVO Plan</span> as a Full-Stack Developer, 
+                building robust supplier management systems with <span className="text-terminal-green font-bold">Angular</span> and{' '}
+                <span className="text-terminal-blue font-bold">Spring Boot</span>.
+              </p>
+              <p className="text-base md:text-lg text-terminal-text-main leading-relaxed font-mono">
+                <span className="text-terminal-green">[STATUS]</span> Seeking internship opportunities |{' '}
+                <span className="text-terminal-blue">Available for collaboration</span> |{' '}
+                <span className="text-terminal-green">Open to new challenges</span>
+              </p>
+            </div>
+          </div>
 
           {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 gpu-accelerate">
             <button 
-              onClick={() => { playButtonSound(); scrollToAbout(); }}
-              className="bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white px-10 py-4 rounded-full font-extrabold shadow-lg hover:shadow-pink-500/40 hover:scale-105 transform transition-all duration-300 border-2 border-purple-700 hover:border-pink-400 text-lg tracking-wider"
+              onClick={(e) => { 
+                e.preventDefault();
+                e.stopPropagation();
+                playButtonSound(); 
+                scrollToAbout(); 
+              }}
+              className="bg-terminal-bg-panel text-terminal-green px-10 py-4 rounded-terminal font-extrabold terminal-glow hover:terminal-glow-blue hover:scale-105 transform transition-all duration-300 border-2 border-terminal-green hover:border-terminal-blue text-lg tracking-wider gpu-accelerate terminal-button-press terminal-pulse"
             >
-              Explore My Work
+              <span className="text-terminal-green">$</span> Explore My Work
             </button>
             <a
               href="/cv/Ruvindu_vv.pdf"
               download="Ruvindu_Sharadha_Ranasingha_CV.pdf"
-              className="border-2 border-pink-400 text-pink-400 px-10 py-4 rounded-full font-extrabold hover:bg-pink-600 hover:text-white hover:shadow-lg transition-all duration-300 flex items-center justify-center text-lg tracking-wider"
+              className="border-2 border-terminal-blue text-terminal-blue px-10 py-4 rounded-terminal font-extrabold hover:bg-terminal-green hover:text-terminal-bg-main hover:terminal-glow transition-all duration-300 flex items-center justify-center text-lg tracking-wider gpu-accelerate"
             >
               <Download className="mr-2" size={22} />
-              Download CV
+              <span className="text-terminal-green">$</span> Download CV
             </a>
+          </div>
+
+          {/* Terminal Command Prompt */}
+          <div className="mb-4 text-center">
+            <p className="text-terminal-green text-sm font-mono">
+              <span className="text-terminal-green">root@kali:~$</span> <span className="text-terminal-text-main">scroll_down</span>
+            </p>
           </div>
 
           {/* Scroll Indicator */}
           <button 
-            onClick={() => { playButtonSound(); scrollToAbout(); }}
-            className="animate-bounce text-purple-400 hover:text-pink-400 transition-colors duration-300"
+            onClick={(e) => { 
+              e.preventDefault();
+              e.stopPropagation();
+              playButtonSound(); 
+              scrollToAbout(); 
+            }}
+            className="animate-bounce text-terminal-green hover:text-terminal-blue transition-colors duration-300 gpu-accelerate terminal-button-press terminal-pulse"
           >
             <ArrowDown size={36} />
           </button>
