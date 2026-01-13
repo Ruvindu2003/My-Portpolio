@@ -102,14 +102,20 @@ const Projects = () => {
   ];
 
   return (
-  <section id="projects" className="py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
+  <section id="projects" className="py-20 bg-terminal-bg-main terminal-scanline terminal-matrix-bg gpu-accelerate">
   <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_20px_rgba(124,58,237,0.7)]">
+          {/* Terminal Command */}
+          <div className="mb-4 text-left max-w-2xl mx-auto">
+            <p className="text-terminal-green text-sm font-mono">
+              <span className="text-terminal-green">root@kali:~$</span> <span className="text-terminal-text-main">ls -la projects/</span>
+            </p>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight gradient-text gpu-accelerate">
             Featured Projects
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 rounded-full shadow-lg"></div>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto font-mono">
+          <div className="w-32 h-1 bg-terminal-green mx-auto mb-8 rounded-terminal terminal-glow"></div>
+          <p className="text-2xl text-terminal-text-main max-w-3xl mx-auto font-mono">
             Explore my portfolio of full-stack applications, desktop software, and web solutions
           </p>
         </div>
@@ -118,7 +124,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="relative group bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black/90 rounded-3xl shadow-2xl overflow-hidden border-2 border-purple-700 hover:border-pink-500 transition-all duration-300 hover:scale-[1.025] hover:shadow-3xl backdrop-blur-lg"
+              className="relative group bg-terminal-bg-panel rounded-terminal shadow-2xl overflow-hidden border-2 border-terminal-border hover:border-terminal-green transition-all duration-300 hover:scale-[1.025] hover:terminal-glow gpu-accelerate"
             >
               {/* Project Image */}
               <div className="relative h-64 overflow-hidden">
@@ -129,48 +135,48 @@ const Projects = () => {
                 />
                 <div className="absolute top-4 right-4 flex flex-col items-end gap-2 z-10">
                   {project.title.includes('Internship Project (Web)') && (
-                    <span className="px-3 py-1 rounded-full text-xs font-bold shadow bg-blue-700 text-white border border-blue-400 mb-1 animate-pulse">
+                    <span className="px-3 py-1 rounded-terminal text-xs font-bold shadow bg-terminal-bg-panel text-terminal-green border border-terminal-green mb-1 animate-pulse terminal-glow">
                       Student Internship Project
                     </span>
                   )}
-                  <span className={`px-3 py-1 rounded-full text-sm font-semibold shadow-md ${
+                  <span className={`px-3 py-1 rounded-terminal text-sm font-semibold shadow-md ${
                     project.status === 'In Progress'
-                      ? 'bg-yellow-400 text-yellow-900'
-                      : 'bg-green-400 text-green-900'
+                      ? 'bg-terminal-yellow text-terminal-bg-main'
+                      : 'bg-terminal-green text-terminal-bg-main'
                   }`}>
                     {project.status}
                   </span>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 via-transparent to-transparent group-hover:from-pink-900/80 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-terminal-bg-main/50 group-hover:bg-terminal-bg-main/30 transition-all duration-500"></div>
               </div>
 
               {/* Project Content */}
               <div className="p-8 pb-7 flex flex-col h-full">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)] group-hover:text-pink-400 transition-colors duration-300">{project.title}</h3>
-                  <div className="flex items-center text-sm text-pink-400">
+                  <h3 className="text-2xl font-extrabold text-terminal-green group-hover:text-terminal-blue transition-colors duration-300 terminal-glow">{project.title}</h3>
+                  <div className="flex items-center text-sm text-terminal-blue">
                     <Layers size={20} className="mr-1" />
                     {project.type}
                   </div>
                 </div>
 
-                <p className="text-lg text-gray-200 mb-4 leading-relaxed font-mono group-hover:text-pink-200 transition-colors duration-300">
+                <p className="text-lg text-terminal-text-main mb-4 leading-relaxed font-mono group-hover:text-terminal-green transition-colors duration-300">
                   {project.description}
                 </p>
 
                 {/* Key Features */}
                 <div className="mb-4">
-                  <h4 className="font-semibold text-pink-400 mb-2 group-hover:text-blue-400 transition-colors duration-300">Key Features:</h4>
-                  <ul className="text-base text-gray-300 space-y-1">
+                  <h4 className="font-semibold text-terminal-green mb-2 group-hover:text-terminal-blue transition-colors duration-300">Key Features:</h4>
+                  <ul className="text-base text-terminal-text-main space-y-1">
                     {project.features.slice(0, 4).map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <div className="w-2 h-2 bg-gradient-to-br from-blue-400 to-pink-400 rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-terminal-green rounded-terminal mt-2 mr-2 flex-shrink-0"></div>
                         {feature}
                       </li>
                     ))}
                   </ul>
                   {project.features.length > 4 && (
-                    <div className="text-xs text-pink-400 mt-1">...and more</div>
+                    <div className="text-xs text-terminal-blue mt-1">...and more</div>
                   )}
                 </div>
 
@@ -180,7 +186,7 @@ const Projects = () => {
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="bg-gradient-to-r from-blue-700 to-pink-700 text-white px-3 py-1 rounded-full text-sm font-semibold border border-pink-400 shadow-sm group-hover:bg-pink-600 group-hover:text-pink-100 transition-colors duration-300"
+                        className="bg-terminal-bg-main text-terminal-green px-3 py-1 rounded-terminal text-sm font-semibold border border-terminal-green shadow-sm group-hover:bg-terminal-green group-hover:text-terminal-bg-main transition-colors duration-300"
                       >
                         {tech}
                       </span>
@@ -190,11 +196,11 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 mt-auto">
-                  <button className="flex items-center px-5 py-2 bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white rounded-xl hover:shadow-xl transition-all duration-300 flex-1 justify-center font-semibold group-hover:from-pink-700 group-hover:to-blue-700 border-2 border-purple-700 hover:border-pink-400" onClick={playButtonSound}>
+                  <button className="flex items-center px-5 py-2 bg-terminal-bg-main text-terminal-green rounded-terminal hover:terminal-glow transition-all duration-300 flex-1 justify-center font-semibold border-2 border-terminal-green hover:border-terminal-blue terminal-button-press" onClick={(e) => { e.preventDefault(); playButtonSound(); }}>
                     <ExternalLink size={18} className="mr-2" />
-                    View Project
+                    <span className="text-terminal-green">$</span> View Project
                   </button>
-                  <button className="flex items-center px-5 py-2 border-2 border-pink-400 text-pink-400 rounded-xl hover:bg-pink-600 hover:text-white transition-all duration-300" onClick={playButtonSound}>
+                  <button className="flex items-center px-5 py-2 border-2 border-terminal-blue text-terminal-blue rounded-terminal hover:bg-terminal-blue hover:text-terminal-bg-main transition-all duration-300 terminal-button-press" onClick={(e) => { e.preventDefault(); playButtonSound(); }}>
                     <Github size={18} />
                   </button>
                 </div>
