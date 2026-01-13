@@ -53,14 +53,20 @@ const Skills = () => {
   ];
 
   return (
-  <section id="skills" className="py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
+  <section id="skills" className="py-20 bg-terminal-bg-main terminal-scanline terminal-matrix-bg gpu-accelerate">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_20px_rgba(124,58,237,0.7)]">
+          {/* Terminal Command */}
+          <div className="mb-4 text-left max-w-2xl mx-auto">
+            <p className="text-terminal-green text-sm font-mono">
+              <span className="text-terminal-green">root@kali:~$</span> <span className="text-terminal-text-main">skill --list</span>
+            </p>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight gradient-text gpu-accelerate">
             Technical Skills
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 rounded-full shadow-lg"></div>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto font-mono">
+          <div className="w-32 h-1 bg-terminal-green mx-auto mb-8 rounded-terminal terminal-glow"></div>
+          <p className="text-2xl text-terminal-text-main max-w-3xl mx-auto font-mono">
             Comprehensive expertise across modern web technologies and development frameworks
           </p>
         </div>
@@ -69,27 +75,27 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={index}
-              className="bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black/90 rounded-2xl shadow-2xl p-8 hover:shadow-3xl transition-all duration-300 border-2 border-purple-700 hover:border-pink-500 backdrop-blur-lg"
+              className="bg-terminal-bg-panel rounded-terminal shadow-2xl p-8 hover:terminal-glow transition-all duration-300 border-2 border-terminal-border hover:border-terminal-green gpu-accelerate"
             >
               <div className="flex items-center mb-6">
-                <div className="flex items-center justify-center w-16 h-16 bg-black rounded-xl mr-4 border-2 border-blue-700">
+                <div className="flex items-center justify-center w-16 h-16 bg-terminal-bg-main rounded-terminal mr-4 border-2 border-terminal-green">
                   {category.icon}
                 </div>
-                <h3 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)]">{category.title}</h3>
+                <h3 className="text-2xl font-extrabold text-terminal-green terminal-glow">{category.title}</h3>
               </div>
 
               <div className="space-y-4">
                 {category.skills.map((skill, idx) => (
                   <div key={idx} className="group">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-200 font-bold font-mono">{skill.name}</span>
-                      <span className="text-sm text-pink-400 group-hover:text-blue-400 transition-colors duration-200 font-mono">
+                      <span className="text-terminal-text-main font-bold font-mono">{skill.name}</span>
+                      <span className="text-sm text-terminal-green group-hover:text-terminal-blue transition-colors duration-200 font-mono">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                    <div className="w-full bg-terminal-bg-main rounded-terminal h-2 overflow-hidden border border-terminal-border">
                       <div 
-                        className="h-full bg-gradient-to-r from-blue-700 to-pink-700 rounded-full transition-all duration-1000 ease-out group-hover:shadow-lg"
+                        className="h-full bg-terminal-green rounded-terminal transition-all duration-1000 ease-out group-hover:terminal-glow"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
@@ -102,7 +108,7 @@ const Skills = () => {
 
         {/* Additional Skills Section */}
         <div className="mt-16 text-center">
-          <h3 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-8 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)]">Additional Competencies</h3>
+          <h3 className="text-3xl font-extrabold text-terminal-green mb-8 terminal-glow">Additional Competencies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
               'Agile Development', 'Team Leadership', 'Problem Solving', 'Communication',
@@ -111,7 +117,7 @@ const Skills = () => {
             ].map((skill, index) => (
               <span 
                 key={index}
-                className="bg-gradient-to-r from-blue-700 to-pink-700 text-white px-4 py-2 rounded-full font-bold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                className="bg-terminal-bg-panel text-terminal-green px-4 py-2 rounded-terminal font-bold border border-terminal-green hover:terminal-glow transition-all duration-300 transform hover:-translate-y-1"
               >
                 {skill}
               </span>
