@@ -49,14 +49,20 @@ const Education = () => {
   ];
 
   return (
-  <section id="education" className="py-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
+  <section id="education" className="py-20 bg-terminal-bg-main terminal-scanline terminal-matrix-bg gpu-accelerate">
   <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-[0_0_20px_rgba(124,58,237,0.7)]">
+          {/* Terminal Command */}
+          <div className="mb-4 text-left max-w-2xl mx-auto">
+            <p className="text-terminal-green text-sm font-mono">
+              <span className="text-terminal-green">root@kali:~$</span> <span className="text-terminal-text-main">cat education.log</span>
+            </p>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight gradient-text gpu-accelerate">
             Education
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 rounded-full shadow-lg"></div>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto font-mono">
+          <div className="w-32 h-1 bg-terminal-green mx-auto mb-8 rounded-terminal terminal-glow"></div>
+          <p className="text-2xl text-terminal-text-main max-w-3xl mx-auto font-mono">
             Academic journey building strong foundations in technology and software engineering
           </p>
         </div>
@@ -66,19 +72,19 @@ const Education = () => {
             {educationData.map((edu, index) => (
               <div 
                 key={index}
-                className="bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black/90 rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-purple-700 hover:border-pink-500 backdrop-blur-lg"
+                className="bg-terminal-bg-panel rounded-terminal p-8 shadow-2xl hover:terminal-glow transition-all duration-300 border-2 border-terminal-border hover:border-terminal-green gpu-accelerate"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
                   <div className="flex-1">
                     <div className="flex items-start mb-4">
-                      <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl mr-6 flex-shrink-0">
-                        <GraduationCap className="text-white" size={28} />
+                      <div className="flex items-center justify-center w-16 h-16 bg-terminal-bg-main border-2 border-terminal-green rounded-terminal mr-6 flex-shrink-0">
+                        <GraduationCap className="text-terminal-green" size={28} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-2 drop-shadow-[0_0_10px_rgba(124,58,237,0.7)]">{edu.degree}</h3>
-                        <h4 className="text-lg font-bold text-pink-400 mb-3">{edu.institution}</h4>
+                        <h3 className="text-2xl font-extrabold text-terminal-green mb-2 terminal-glow">{edu.degree}</h3>
+                        <h4 className="text-lg font-bold text-terminal-blue mb-3">{edu.institution}</h4>
                         
-                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300 mb-4">
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-terminal-text-main mb-4">
                           <div className="flex items-center">
                             <Calendar size={16} className="mr-2" />
                             {edu.period}
@@ -89,10 +95,10 @@ const Education = () => {
                           </div>
                           <div className="flex items-center">
                             <Award size={16} className="mr-2" />
-                            <span className={`px-2 py-1 rounded-full text-xs font-bold ${
+                            <span className={`px-2 py-1 rounded-terminal text-xs font-bold ${
                               edu.status === 'Current' 
-                                ? 'bg-green-400 text-white' 
-                                : 'bg-blue-400 text-white'
+                                ? 'bg-terminal-green text-terminal-bg-main' 
+                                : 'bg-terminal-blue text-terminal-bg-main'
                             }`}>
                               {edu.status}
                             </span>
@@ -101,17 +107,17 @@ const Education = () => {
                       </div>
                     </div>
 
-                    <p className="text-gray-300 leading-relaxed mb-6 font-mono">
+                    <p className="text-terminal-text-main leading-relaxed mb-6 font-mono">
                       {edu.description}
                     </p>
 
                     <div>
-                      <h5 className="font-semibold text-pink-400 mb-3">Key Highlights:</h5>
+                      <h5 className="font-semibold text-terminal-green mb-3">Key Highlights:</h5>
                       <div className="grid sm:grid-cols-2 gap-2">
                         {edu.highlights.map((highlight, idx) => (
                           <div key={idx} className="flex items-start">
-                            <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span className="text-gray-300 text-base font-mono">{highlight}</span>
+                            <div className="w-2 h-2 bg-terminal-green rounded-terminal mt-2 mr-3 flex-shrink-0"></div>
+                            <span className="text-terminal-text-main text-base font-mono">{highlight}</span>
                           </div>
                         ))}
                       </div>
