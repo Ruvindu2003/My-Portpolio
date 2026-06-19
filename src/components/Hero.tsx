@@ -59,7 +59,7 @@ const Hero = () => {
 
             <div className="mb-10 max-w-2xl">
               <p className="text-2xl lg:text-3xl text-terminal-text-main mb-6 leading-relaxed font-mono">
-                <span className="text-terminal-green">$</span> Full-Stack Developer specializing in{' '}
+                <span className="text-terminal-green">$</span> Associate Software Engineer specializing in{' '}
                 <span className="text-terminal-blue font-bold">Spring Boot</span>,{' '}
                 <span className="text-terminal-green font-bold">Angular</span> &{' '}
                 <span className="text-terminal-blue font-bold">React</span>
@@ -68,7 +68,7 @@ const Hero = () => {
               <div className="bg-terminal-bg-panel/30 border-l-4 border-terminal-green p-4 backdrop-blur-sm text-left">
                 <p className="text-terminal-text-main font-mono text-lg">
                   <span className="text-terminal-green mr-2">&gt;&gt;</span>
-                  Building robust supplier management systems at <span className="text-terminal-blue font-bold">EVO Plan</span>.
+                  Currently contributing to sustainable green-technology solutions at <span className="text-terminal-blue font-bold">eGreen</span>.
                 </p>
               </div>
             </div>

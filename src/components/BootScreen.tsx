@@ -19,7 +19,7 @@ const BootScreen = ({ onComplete }: BootScreenProps) => {
     '[OK] System ready.',
     '',
     'Kali Linux Terminal v2.0',
-    'Copyright (c) 2025 Ruvindu Sharadha Ranasingha',
+    'Copyright (c) 2026 Ruvindu Sharadha Ranasingha',
     '',
     'Type "help" for available commands.',
     '',

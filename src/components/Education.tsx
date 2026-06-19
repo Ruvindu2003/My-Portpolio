@@ -4,18 +4,32 @@ import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
 const Education = () => {
   const educationData = [
     {
+      degree: 'Bachelor of Information Technology',
+      institution: 'University of Colombo School of Computing',
+      period: '2026 – Present (Pending)',
+      location: 'Colombo, Sri Lanka',
+      status: 'Current',
+      description: 'Pursuing a comprehensive curriculum in computer science, software engineering, and modern technology frameworks at UCSC.',
+      highlights: [
+        'Computer Science fundamentals',
+        'Advanced Software Engineering concepts',
+        'Information Systems architecture',
+        'Academic and industry research focus'
+      ]
+    },
+    {
       degree: 'Diploma in Software Engineering',
       institution: 'Institute of Computer Engineering Technology',
-      period: '2024 - 2025 (Ongoing)',
+      period: '2024 – 2025 (Completed)',
       location: 'Sri Lanka',
-      status: 'Current',
-      description: 'Comprehensive program covering modern software development practices, including full-stack development, agile methodologies, and industry-standard tools.',
+      status: 'Completed',
+      description: 'Comprehensive training in modern software development practices, full-stack frameworks, database design, and agile methodologies.',
       highlights: [
-        'Full-Stack Development with modern frameworks',
-        'Agile Development Methodologies',
-        'Database Design and Management',
-        'Software Engineering Principles',
-        'Team Collaboration and Project Management'
+        'Full-Stack Development with Java and JavaScript',
+        'Agile Software Development Methodologies',
+        'Database Design and Optimization',
+        'Software Architecture Patterns (MVC, DAO)',
+        'Advanced OOP and Design Principles'
       ]
     },
     {

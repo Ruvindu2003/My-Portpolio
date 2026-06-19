@@ -77,14 +77,14 @@ const Contact = () => {
     {
       icon: <Mail className="text-blue-600" size={24} />,
       title: 'Email',
-      content: 'ruvindu@example.com',
+      content: 'ruvindusharada22@gmail.com',
       action: 'mailto:ruvindusharada22@gmail.com'
     },
     {
       icon: <Phone className="text-purple-600" size={24} />,
       title: 'Phone',
-      content: '+94781001040',
-      action: 'tel:+94781001040'
+      content: '+94 72 221 3200',
+      action: 'tel:+94722213200'
     },
     {
       icon: <MapPin className="text-teal-600" size={24} />,
@@ -98,7 +98,7 @@ const Contact = () => {
     {
       icon: <Github size={24} />,
       name: 'GitHub',
-      url: 'https://github.com/ruvindu2003',
+      url: 'https://github.com/Ruvindu2003',
       color: 'hover:text-gray-800'
     },
     {
@@ -110,7 +110,7 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       name: 'Email',
-      url: 'mailto:ruvindu22@gmail.com',
+      url: 'mailto:ruvindusharada22@gmail.com',
       color: 'hover:text-red-600'
     }
   ];
@@ -187,10 +187,10 @@ const Contact = () => {
               <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-terminal-bg-panel border-2 border-terminal-green rounded-terminal shadow-lg terminal-glow">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-terminal-green rounded-terminal mr-3 animate-pulse"></div>
-                  <span className="text-terminal-green font-bold font-mono">Available for new opportunities</span>
+                  <span className="text-terminal-green font-bold font-mono">Open for Collaboration</span>
                 </div>
                 <p className="text-terminal-text-main text-base mt-2 font-mono">
-                  Looking for internships and entry-level software engineering positions
+                  Open to networking, technical discussions, and collaborative enterprise solutions.
                 </p>
               </div>
             </div>
@@ -278,6 +278,31 @@ const Contact = () => {
                     <span className="text-terminal-green">$</span> Send Message
                   </button>
                 </form>
+              </div>
+            </div>
+
+            {/* Professional References */}
+            <div className="mt-16 border-t-2 border-terminal-border pt-12">
+              <h3 className="text-3xl font-extrabold text-terminal-green mb-8 text-center terminal-glow">Professional References</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-terminal-bg-panel p-6 rounded-terminal border-2 border-terminal-border hover:border-terminal-green hover:terminal-glow transition-all duration-300">
+                  <h4 className="text-xl font-extrabold text-terminal-green mb-1">Mr. Sharadha Marasinghe</h4>
+                  <p className="text-terminal-blue font-bold mb-3">Senior Lecturer, Institute of Computer Engineering Technology</p>
+                  <div className="space-y-1 font-mono text-sm text-terminal-text-main">
+                    <p><span className="text-terminal-green">Phone:</span> <a href="tel:+94779911825" className="hover:underline hover:text-terminal-green">+94 77 991 1825</a></p>
+                    <p><span className="text-terminal-green">Email:</span> <a href="mailto:icet.sharadha@gmail.com" className="hover:underline hover:text-terminal-green">icet.sharadha@gmail.com</a></p>
+                    <p className="text-xs text-terminal-text-main mt-2 opacity-80">// Supervisor for academic projects and professional development</p>
+                  </div>
+                </div>
+                
+                <div className="bg-terminal-bg-panel p-6 rounded-terminal border-2 border-terminal-border hover:border-terminal-green hover:terminal-glow transition-all duration-300">
+                  <h4 className="text-xl font-extrabold text-terminal-green mb-1">Mr. Dewmal Hadapanagoda</h4>
+                  <p className="text-terminal-blue font-bold mb-3">Software AI Architect</p>
+                  <div className="space-y-1 font-mono text-sm text-terminal-text-main">
+                    <p><span className="text-terminal-green">Phone:</span> <a href="tel:+94767737845" className="hover:underline hover:text-terminal-green">+94 76 773 7845</a></p>
+                    <p className="text-xs text-terminal-text-main mt-2 opacity-80">// Reference for advanced systems architecture and machine learning</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -7,47 +7,50 @@ const Skills = () => {
       icon: <Globe className="text-blue-600" size={32} />,
       title: 'Frontend Development',
       skills: [
-        { name: 'React', level: 90 },
-        { name: 'Angular', level: 85 },
-        { name: 'JavaScript', level: 90 },
-        { name: 'TypeScript', level: 80 },
-        { name: 'HTML/CSS', level: 95 },
-        { name: 'Tailwind CSS', level: 85 },
-        { name: 'Bootstrap', level: 80 }
+        { name: 'React 18', level: 90 },
+        { name: 'Angular 16+', level: 85 },
+        { name: 'JavaScript (ES6+)', level: 90 },
+        { name: 'TypeScript', level: 85 },
+        { name: 'HTML5 / CSS3', level: 95 },
+        { name: 'Tailwind CSS 3', level: 90 },
+        { name: 'Bootstrap 5', level: 80 },
+        { name: 'Material-UI', level: 80 }
       ]
     },
     {
-      icon: <Code className="text-purple-600\" size={32} />,
+      icon: <Code className="text-purple-600" size={32} />,
       title: 'Backend Development',
       skills: [
-        { name: 'Java', level: 90 },
-        { name: 'Spring Boot', level: 85 },
-        { name: 'Node.js', level: 75 },
-        { name: 'REST API', level: 90 },
-        { name: 'GraphQL', level: 70 },
-        { name: 'Swagger', level: 75 }
+        { name: 'Java (8-17)', level: 90 },
+        { name: 'Spring Boot', level: 90 },
+        { name: 'Spring Security & JWT', level: 85 },
+        { name: 'Hibernate / JPA', level: 85 },
+        { name: 'REST APIs & GraphQL', level: 90 },
+        { name: 'Node.js & Express.js', level: 75 }
       ]
     },
     {
       icon: <Database className="text-teal-600" size={32} />,
-      title: 'Database & Tools',
+      title: 'Databases & Tools',
       skills: [
-        { name: 'MySQL', level: 85 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'SQL Server', level: 75 },
-        { name: 'Hibernate', level: 80 },
-        { name: 'Git/GitHub', level: 90 }
+        { name: 'MySQL & PostgreSQL', level: 90 },
+        { name: 'MongoDB & Redis', level: 80 },
+        { name: 'Git & GitHub', level: 90 },
+        { name: 'Docker', level: 70 },
+        { name: 'Maven', level: 80 },
+        { name: 'Postman & Swagger', level: 90 }
       ]
     },
     {
-      icon: <Wrench className="text-indigo-600\" size={32} />,
-      title: 'Other Technologies',
+      icon: <Wrench className="text-indigo-600" size={32} />,
+      title: 'Methodologies & Other',
       skills: [
-        { name: 'JavaFX', level: 80 },
-        { name: 'OpenAI Integration', level: 70 },
-        { name: 'Agile Methodologies', level: 85 },
-        { name: 'UML Design', level: 75 },
-        { name: 'Problem Solving', level: 95 }
+        { name: 'Agile / Scrum', level: 90 },
+        { name: 'Microservices', level: 80 },
+        { name: 'RESTful Design', level: 90 },
+        { name: 'TDD & JUnit', level: 80 },
+        { name: 'MVC Architecture', level: 90 },
+        { name: 'JavaFX & Scene Builder', level: 85 }
       ]
     }
   ];
