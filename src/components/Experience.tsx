@@ -4,50 +4,64 @@ import { Calendar, MapPin, Briefcase } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Internship Applicant | Software Engineering',
-      company: 'SYIGEN Ltd.',
-      period: 'August 2025 – Present',
-      location: 'Remote / Sri Lanka',
-      type: 'Internship (Seeking)',
+      title: 'Associate Software Engineer',
+      company: 'eGreen',
+      period: 'December 2025 – Present',
+      location: 'Sri Lanka',
+      type: 'Full-Time',
       responsibilities: [
-        'Currently seeking internship opportunities at SYIGEN Ltd. to contribute and grow as a software engineer.',
-        'Eager to join a dynamic team and work on innovative projects in a real-world environment.',
-        'Actively following SYIGEN company updates and culture on LinkedIn.'
+        'Designing and developing scalable software solutions aligned with the company\'s mission to drive sustainable and green technology initiatives',
+        'Building and maintaining robust full-stack applications using modern frameworks and best practices for production-grade deployment',
+        'Collaborating with cross-functional engineering teams to architect, review, and ship new product features across frontend and backend layers',
+        'Contributing to technical decision-making, code quality improvements, and internal tooling to accelerate development velocity',
+        'Participating actively in agile ceremonies including sprint planning, retrospectives, and daily stand-ups to ensure on-time delivery'
       ],
-      technologies: ['Java', 'Spring Boot', 'React', 'Teamwork', 'Learning'],
+      technologies: ['React', 'Angular', 'Spring Boot', 'PostgreSQL', 'Agile', 'Git']
+    },
+    {
+      title: 'Software Engineering Intern',
+      company: 'Syigen (Pvt) Ltd',
+      period: 'June 2025 – December 2025',
+      location: 'Sri Lanka',
+      type: 'Internship',
+      responsibilities: [
+        'Contributed to enterprise-level software development projects within a fast-paced technology company environment',
+        'Collaborated with senior developers and cross-functional teams to design and deliver scalable software solutions',
+        'Implemented modern development practices including code reviews, automated testing, and continuous integration workflows',
+        'Gained in-depth exposure to production-grade applications and industry-standard development pipelines',
+        'Participated in agile ceremonies and actively contributed to sprint planning, task estimation, and retrospectives'
+      ],
+      technologies: ['React', 'Angular', 'Spring Boot', 'MySQL', 'REST API', 'Git', 'Agile'],
       link: 'https://www.linkedin.com/company/syigen-ltd/posts/?feedView=all'
     },
     {
-      title: 'EVO Plan | Full-Stack Developer',
-      company: 'Group Project',
-      period: 'March 2025 – In Progress',
+      title: 'Trainee Software Engineer',
+      company: 'Institute of Computer Engineering Technology',
+      period: 'March 2024 – Present',
+      location: 'Sri Lanka',
+      type: 'Training',
+      responsibilities: [
+        'Mastered Agile methodologies through hands-on sprint planning, stand-up participation, and iterative development cycles',
+        'Developed comprehensive software solutions using industry-standard tools including VS Code and IntelliJ IDEA',
+        'Applied advanced software design principles including UML diagrams, design patterns, and architectural best practices',
+        'Enhanced technical communication and team collaboration skills through real-world cross-functional project work'
+      ],
+      technologies: ['Agile', 'UML', 'VS Code', 'IntelliJ IDEA', 'Design Patterns', 'MVC']
+    },
+    {
+      title: 'Full-Stack Developer (Team Project)',
+      company: 'EVO Plan Platform',
+      period: 'March 2025 – December 2025',
       location: 'Team Project',
       type: 'Project',
       responsibilities: [
-        'Contributing as a Full Stack Developer to the Supplier module of the EVO Planner platform',
-        'Developing responsive frontend interfaces using Angular for smooth user experiences',
-        'Building and integrating RESTful APIs with Spring Boot for business requirements',
-        'Managing data storage and queries using MySQL and Hibernate',
-        'Collaborating with cross-functional teams to deliver scalable, secure features',
-        'Implementing JWT for secure authentication and following Git best practices'
+        'Architecting and developing the Supplier Management module for a comprehensive enterprise business planning platform',
+        'Building responsive, mobile-optimised frontend interfaces using Angular with modern UI/UX principles',
+        'Engineering robust RESTful APIs with Spring Boot, implementing secure authentication and core business logic',
+        'Designing and optimising MySQL database schema with Hibernate for efficient data management and complex queries',
+        'Implementing JWT-based authentication and following industry-standard Git workflows for collaborative development'
       ],
       technologies: ['Angular', 'Spring Boot', 'MySQL', 'Hibernate', 'JWT', 'REST API', 'Git']
-    },
-    {
-      title: 'Trainee Engineer',
-      company: 'Institute of Computer Engineering Technology',
-      period: 'March 2024 – Present',
-      location: 'Institute',
-      type: 'Training',
-      responsibilities: [
-        'Gained hands-on experience with Agile methodologies including sprint planning and stand-ups',
-        'Developed software solutions using Visual Studio Code and IntelliJ IDEA',
-        'Practiced software design and analysis using UML diagrams',
-        'Applied concepts like agile engineering, fine-tuning, and continuous improvement',
-        'Strengthened communication and team collaboration skills',
-        'Worked in cross-functional teams on real-world projects'
-      ],
-      technologies: ['Agile', 'UML', 'Visual Studio Code', 'IntelliJ IDEA', 'Team Collaboration']
     }
   ];
 

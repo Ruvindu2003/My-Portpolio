@@ -123,15 +123,14 @@ const WelcomePopup = () => {
                 <div className="pl-4 border-l-2 border-terminal-green space-y-3">
                   <p className="text-terminal-text-main">
                     Greetings! I'm <span className="text-terminal-green font-bold">Ruvindu Sharadha Ranasingha</span>, 
-                    an aspiring <span className="text-terminal-blue font-bold">Software Engineer</span> and passionate 
+                    an <span className="text-terminal-blue font-bold">Associate Software Engineer</span> and 
                     <span className="text-terminal-green font-bold"> Full-Stack Developer</span> from the beautiful 
                     highlands of <span className="text-terminal-blue">Nuwara Eliya, Sri Lanka</span>.
                   </p>
 
                   <p className="text-terminal-text-main">
-                    Currently pursuing my <span className="text-terminal-green">Diploma in Software Engineering</span> at the 
-                    Institute of Computer Engineering Technology, I've immersed myself in the world of modern web development, 
-                    crafting solutions that bridge the gap between elegant user interfaces and robust backend systems.
+                    Currently pursuing my <span className="text-terminal-green">Bachelor of Information Technology</span> at the 
+                    University of Colombo School of Computing (UCSC) and holding a <span className="text-terminal-green">Diploma in Software Engineering</span>, I build scalable full-stack applications.
                   </p>
 
                   <p className="text-terminal-text-main">
@@ -145,7 +144,7 @@ const WelcomePopup = () => {
                         <span className="text-terminal-green font-bold">Frontend Mastery</span>
                       </div>
                       <p className="text-sm text-terminal-text-main">
-                        React, Angular, TypeScript, JavaScript, HTML/CSS, Tailwind CSS
+                        React, Angular, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS, Bootstrap, Material-UI
                       </p>
                     </div>
 
@@ -155,7 +154,7 @@ const WelcomePopup = () => {
                         <span className="text-terminal-blue font-bold">Backend Excellence</span>
                       </div>
                       <p className="text-sm text-terminal-text-main">
-                        Java, Spring Boot, REST APIs, Node.js, JWT Authentication
+                        Java, Spring Boot, Spring Security, REST APIs, Node.js, JWT, Hibernate
                       </p>
                     </div>
 
@@ -165,7 +164,7 @@ const WelcomePopup = () => {
                         <span className="text-terminal-green font-bold">Database & Tools</span>
                       </div>
                       <p className="text-sm text-terminal-text-main">
-                        MySQL, MongoDB, Hibernate, Git/GitHub, Agile Methodologies
+                        MySQL, PostgreSQL, MongoDB, Redis, Docker, Git/GitHub, Maven
                       </p>
                     </div>
 
@@ -175,21 +174,17 @@ const WelcomePopup = () => {
                         <span className="text-terminal-blue font-bold">Specializations</span>
                       </div>
                       <p className="text-sm text-terminal-text-main">
-                        Full-Stack Development, Problem Solving, Team Collaboration
+                        Full-Stack Development, Microservices, RESTful Design, Agile/Scrum, TDD
                       </p>
                     </div>
                   </div>
 
                   <p className="text-terminal-text-main">
-                    I'm actively contributing to <span className="text-terminal-green font-bold">EVO Plan</span> as a Full-Stack Developer, 
-                    building scalable supplier management solutions. My passion lies in creating efficient, secure, and user-friendly 
-                    applications that solve real-world problems.
+                    I am currently contributing to sustainable green-technology initiatives at <span className="text-terminal-green font-bold">eGreen</span> as an Associate Software Engineer, following a successful Software Engineering Internship at <span className="text-terminal-blue font-bold">Syigen (Pvt) Ltd</span>.
                   </p>
 
                   <p className="text-terminal-text-main">
-                    Currently seeking <span className="text-terminal-yellow font-bold">internship opportunities</span> to further 
-                    enhance my skills and contribute to innovative projects. I'm eager to collaborate with dynamic teams and 
-                    transform ideas into impactful software solutions.
+                    I'm passionate about resolving complex business problems, refining code quality, and collaborating in agile teams to ship production-ready, enterprise-grade software.
                   </p>
                 </div>
 

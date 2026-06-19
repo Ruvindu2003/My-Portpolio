@@ -9,7 +9,7 @@ const About = () => {
       description: 'Experienced in both frontend and backend technologies'
     },
     {
-      icon: <Users className="text-purple-600\" size={24} />,
+      icon: <Users className="text-purple-600" size={24} />,
       title: 'Team Collaborator',
       description: 'Strong communication and teamwork skills'
     },
@@ -19,7 +19,7 @@ const About = () => {
       description: 'Innovative thinking and solution-oriented approach'
     },
     {
-      icon: <Target className="text-indigo-600\" size={24} />,
+      icon: <Target className="text-indigo-600" size={24} />,
       title: 'Goal-Oriented',
       description: 'Focused on delivering quality software solutions'
     }
@@ -45,15 +45,10 @@ const About = () => {
           <div className="mb-12">
             <h3 className="text-3xl font-extrabold text-terminal-green mb-6 terminal-glow terminal-pulse">Professional Summary</h3>
             <p className="text-xl text-terminal-text-main leading-relaxed mb-6 font-mono">
-              I'm an aspiring Software Engineer with practical experience in both front-end and back-end development. 
-              Currently pursuing a Diploma in Software Engineering at the Institute of Computer Engineering Technology, 
-              I have gained hands-on experience with modern development frameworks and methodologies.
+              Results-driven <span className="font-semibold text-terminal-green">Associate Software Engineer</span> with close to 1 year of professional industry experience across internship and full-time roles. I possess hands-on expertise in full-stack development, enterprise application design, and modern software engineering practices.
             </p>
             <p className="text-xl text-terminal-text-main leading-relaxed font-mono">
-              My expertise spans across <span className="font-semibold text-terminal-blue">HTML, CSS, JavaScript</span>, 
-              modern frameworks like <span className="font-semibold text-terminal-green">Angular and React</span>, 
-              and backend technologies including <span className="font-semibold text-terminal-blue">Java and Spring Boot</span>. 
-              I'm passionate about creating scalable, efficient solutions and working collaboratively in team environments.
+              I have delivered scalable web applications at <span className="font-semibold text-terminal-blue">Syigen Ltd</span> using <span className="font-semibold text-terminal-green">React, Angular, Spring Boot</span>, and enterprise-grade databases, and am currently contributing to sustainable green-technology solutions at <span className="font-semibold text-terminal-blue">eGreen</span>. Passionate about object-oriented programming, RESTful API development, database architecture, and agile methodologies.
             </p>
           </div>
 

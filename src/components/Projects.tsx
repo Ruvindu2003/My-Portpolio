@@ -11,94 +11,108 @@ import GlassCard from './GlassCard';
 const Projects = () => {
   const projects = [
     {
-      title: 'Internship Project (Web)',
-      description: 'A full-stack web application completed as my student internship project. The system features 3 user roles: Admin, Student, and Company, each with unique access and functionality. It uses secure JWT authentication and offers a modern Angular frontend with a robust Spring Boot backend. Note: Project photo has been updated.',
+      title: 'Student Internship Management System',
+      description: 'A comprehensive full-stack enterprise platform developed to streamline internship applications and workflows. Features role-based access control (Company Admin, Student, System Administrator) with secure JWT authentication and token-based communication.',
       image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Angular', 'Spring Boot', 'JWT', 'MySQL', 'Tailwind CSS'],
-      type: 'Full-Stack Web Application',
-      status: 'In Progress',
+      technologies: ['Angular', 'Spring Boot', 'MySQL', 'JWT', 'Spring Security', 'Bootstrap'],
+      type: 'Full-Stack Enterprise Platform',
+      status: 'Completed',
       features: [
         'Role-based access: Admin, Student, Company',
-        'JWT authentication and secure endpoints',
-        'Internship management and application workflows',
-        'Modern Angular UI with Tailwind CSS',
-        'Project photo updated'
+        'Internship application and matching workflows',
+        'Real-time notifications and system alerts',
+        'Document handling and upload features',
+        'Performance tracking and analytics'
+      ]
+    },
+    {
+      title: 'Car Rental Management Platform',
+      description: 'A production-ready full-stack enterprise solution with a microservices architecture and modern design patterns. Features a dynamic pricing engine, real-time availability calendar, and comprehensive reporting.',
+      image: 'https://images.pexels.com/photos/97075/pexels-photo-97075.jpeg?auto=compress&cs=tinysrgb&w=800',
+      technologies: ['Angular 16+', 'Spring Boot', 'MySQL', 'Tailwind CSS', 'JWT', 'Hibernate', 'Postman'],
+      type: 'Full-Stack Enterprise Solution',
+      status: 'Completed',
+      features: [
+        'Real-time vehicle availability management',
+        'Dynamic pricing engine based on schedules',
+        'Automated email/booking confirmations',
+        'Analytics dashboard for rental statistics',
+        'Secure JWT authentication and authorization'
+      ]
+    },
+    {
+      title: 'Student Information Management System',
+      description: 'A modern and scalable web application built with clean architecture and contemporary web development practices. Implemented a robust backend with exception handling, validation, and fully documented APIs.',
+      image: 'https://images.pexels.com/photos/5940721/pexels-photo-5940721.jpeg?auto=compress&cs=tinysrgb&w=800',
+      technologies: ['React 18', 'Redux Toolkit', 'Spring Boot', 'MySQL', 'Material-UI', 'Swagger', 'JUnit'],
+      type: 'Modern Web Application',
+      status: 'Completed',
+      features: [
+        'Bulk data operations (Excel import/export)',
+        'Real-time notifications and detailed reporting',
+        'Comprehensive exception handling and validation',
+        'Interactive dashboard with Redux Toolkit state',
+        'API documentation with Swagger UI'
       ]
     },
     {
       title: 'EVO Plan - Supplier Management',
-      description: 'A scalable solution designed to solve real-world supplier management challenges. Contributing as a Full Stack Developer to build responsive interfaces and integrate RESTful APIs.',
+      description: 'Architected and developed the Supplier Management module for a comprehensive enterprise business planning platform. Contributing as a Full Stack Developer to build responsive, mobile-optimised interfaces.',
       image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Angular', 'Spring Boot', 'MySQL', 'Hibernate', 'JWT', 'REST API'],
+      technologies: ['Angular', 'Spring Boot', 'MySQL', 'Hibernate', 'JWT', 'REST API', 'Git'],
       type: 'Full-Stack Application',
+      status: 'Completed',
+      features: [
+        'Supplier module dashboard and reports',
+        'Responsive mobile-optimized Angular interface',
+        'Secure Spring Boot REST APIs with JWT',
+        'MySQL database optimization with Hibernate',
+        'Collaborative Git workflow development'
+      ]
+    },
+    {
+      title: 'Mos Burger Shop',
+      description: 'A comprehensive modern restaurant management platform designed to optimize order management, inventory tracking, and customer relations with modern web technologies.',
+      image: 'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=800',
+      technologies: ['HTML5', 'Tailwind CSS', 'JavaScript', 'Spring Boot', 'MySQL', 'JWT'],
+      type: 'Modern Restaurant Management System',
       status: 'In Progress',
       features: [
-        'Responsive frontend with Angular',
-        'RESTful API integration',
-        'MySQL database with Hibernate',
-        'JWT authentication',
-        'Scalable architecture'
+        'Online ordering system with live status',
+        'Real-time inventory and stock tracking',
+        'Order placement and queue tracking',
+        'Customer profiles and purchase analytics',
+        'Secure backend integration with REST APIs'
       ]
     },
     {
-      title: 'Car Rental System',
-      description: 'A full-featured Car Rental System with modern tech stack allowing users to browse cars, make bookings, manage schedules, and view rental history with a clean, responsive interface.',
-      image: 'https://images.pexels.com/photos/97075/pexels-photo-97075.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Angular', 'Spring Boot', 'Tailwind CSS', 'MySQL'],
-      type: 'Full-Stack Web Application',
+      title: 'Library Management System',
+      description: 'An enterprise desktop application utilizing JavaFX with professional-grade GUI design. Integrates an optimized MySQL database via JDBC, applying enterprise design patterns (MVC, DAO).',
+      image: '/images/pexels-pixabay-159711.jpg',
+      technologies: ['JavaFX', 'Scene Builder', 'MySQL', 'JDBC', 'Java 11+', 'Maven'],
+      type: 'Enterprise Desktop Application',
       status: 'Completed',
       features: [
-        'Car browsing and booking system',
-        'User authentication and profiles',
-        'Rental schedule management',
-        'Payment integration',
-        'Responsive design with Tailwind CSS'
+        'Book registration and smart search',
+        'Member profiles and card management',
+        'Issue and return tracking system',
+        'Optimized JDBC database connections',
+        'Enterprise MVC & DAO architecture'
       ]
     },
-    {
-      title: 'Student Management System',
-      description: 'A modern and responsive system for managing student records, including personal details, academic performance, and enrollment status with a smooth React interface.',
-      image: 'https://images.pexels.com/photos/5940721/pexels-photo-5940721.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Spring Boot', 'MySQL', 'REST API'],
-      type: 'Web Application',
-      status: 'Completed',
-      features: [
-        'Student record management',
-        'Academic performance tracking',
-        'Enrollment status monitoring',
-        'Dynamic React interface',
-        'Secure data management'
-      ]
-    },
-  {
-    title: 'Library Management System',
-  description: 'A user-friendly Library Management System (Desktop) built with JavaFX, featuring book registration, member profiles, issue/return tracking, and smart search functionality. Note: The photo upload feature is currently not working.',
-  image: '/images/pexels-pixabay-159711.jpg',
-    technologies: ['JavaFX', 'MySQL', 'Scene Builder', 'Java'],
-    type: 'Desktop Application',
-    status: 'Completed',
-    features: [
-      'Book registration and management',
-      'Member profile system',
-      'Issue and return tracking',
-      'Smart search functionality',
-      'Modern UI with Scene Builder',
-
-    ]
-  },
     {
       title: 'Fitness Tracker',
-      description: 'A clean and responsive web app for tracking workouts, calories, and progress over time with real-time validation, interactive elements, and dynamic chart displays.',
+      description: 'A feature-rich Progressive Web Application (PWA) for fitness tracking and goal management with offline capabilities, push notifications, and interactive charts.',
       image: 'https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Chart.js'],
-      type: 'Web Application',
+      technologies: ['HTML5', 'CSS3', 'JavaScript (ES2022)', 'Chart.js', 'Service Workers', 'PWA APIs'],
+      type: 'Progressive Web Application',
       status: 'Completed',
       features: [
-        'Workout logging system',
-        'Calorie tracking',
-        'Progress monitoring',
-        'Interactive charts',
-        'Responsive design'
+        'Workout logging and progress tracking',
+        'Interactive dashboards using Chart.js',
+        'Service Workers for offline capabilities',
+        'Push notifications and PWA install support',
+        'Calorie tracking and goal settings'
       ]
     }
   ];
@@ -136,7 +150,7 @@ const Projects = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-[2px] opacity-80"
                 />
                 <div className="absolute top-4 right-4 flex flex-col items-end gap-2 z-10">
-                  {project.title.includes('Internship Project (Web)') && (
+                  {project.title.includes('Student Internship Management') && (
                     <span className="px-3 py-1 rounded-terminal text-xs font-bold shadow bg-terminal-bg-panel text-terminal-green border border-terminal-green mb-1 animate-pulse terminal-glow">
                       Student Internship Project
                     </span>

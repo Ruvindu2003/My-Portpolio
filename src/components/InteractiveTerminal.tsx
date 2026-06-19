@@ -24,25 +24,26 @@ const InteractiveTerminal = ({ onComplete }: InteractiveTerminalProps) => {
   clear         - Clear terminal
   start         - Launch portfolio dashboard`,
     whoami: `Ruvindu Sharadha Ranasingha
-Software Engineer & Full-Stack Developer
+Associate Software Engineer & Full-Stack Developer
 Location: Nuwara Eliya, Sri Lanka
-Status: Seeking Internship Opportunities`,
-    skills: `Frontend: React, Angular, TypeScript, JavaScript, HTML/CSS, Tailwind CSS
-Backend: Java, Spring Boot, Node.js, REST APIs, JWT
-Database: MySQL, MongoDB, Hibernate
-Tools: Git/GitHub, Agile Methodologies`,
-    projects: `1. EVO Plan - Supplier Management (Full-Stack Developer)
-2. Car Rental System (Full-Stack)
-3. Student Management System (React + Spring Boot)
-4. Library Management System (JavaFX)
-5. Fitness Tracker (Web App)`,
-    experience: `EVO Plan | Full-Stack Developer (March 2025 - Present)
-Trainee Engineer | ICET (March 2024 - Present)
-Seeking: Software Engineering Internship at SYIGEN Ltd.`,
-    about: `I'm an aspiring Software Engineer with practical experience in 
-both front-end and back-end development. Currently pursuing a Diploma 
-in Software Engineering, I'm passionate about creating scalable, 
-efficient solutions and working collaboratively in team environments.`,
+Status: Associate Software Engineer at eGreen`,
+    skills: `Languages: Java (8-17), JavaScript (ES6+), TypeScript, SQL, HTML/CSS, PHP, Python
+Frontend: React 18, Angular 16+, Vue.js, Tailwind CSS, Bootstrap, Material-UI, Chart.js
+Backend: Spring Boot, Spring Security, REST APIs, Node.js, Express.js, GraphQL, JWT, Hibernate
+Tools: Git/GitHub, Docker, Maven, Postman, Swagger, Jenkins
+Methodologies: Microservices, RESTful Design, Agile/Scrum, TDD, MVC`,
+    projects: `1. Student Internship Management System (Angular + Spring Boot + MySQL + JWT)
+2. Car Rental Management Platform (Angular + Spring Boot + MySQL + Tailwind)
+3. Student Information Management System (React + Redux + Spring Boot + Material-UI)
+4. EVO Plan - Supplier Management (Angular + Spring Boot + MySQL + Hibernate)
+5. Mos Burger Shop - Modern Restaurant System (HTML5 + Tailwind + Spring Boot)
+6. Library Management System (JavaFX + MySQL + JDBC)
+7. Fitness Tracker (Progressive Web Application)`,
+    experience: `eGreen | Associate Software Engineer (December 2025 - Present)
+Syigen (Pvt) Ltd | Software Engineering Intern (June 2025 - December 2025)
+Institute of Computer Engineering Technology | Trainee Software Engineer (March 2024 - Present)
+EVO Plan Platform | Full-Stack Developer (March 2025 - December 2025)`,
+    about: `Results-driven Associate Software Engineer with close to 1 year of professional industry experience across internship and full-time roles. Experienced in React, Angular, Spring Boot, and enterprise databases. Currently building green-tech solutions at eGreen.`,
     clear: 'clear',
     start: 'start',
   };
