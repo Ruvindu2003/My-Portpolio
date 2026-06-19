@@ -11,12 +11,14 @@ const Experience = () => {
       type: 'Full-Time',
       responsibilities: [
         'Designing and developing scalable software solutions aligned with the company\'s mission to drive sustainable and green technology initiatives',
+        'Engineered a secure, low-latency Betting System with real-time odds tracking and high transaction throughput',
+        'Architected and developed a modular Apartment Management Platform utilizing Next.js, NestJS, and PostgreSQL',
         'Building and maintaining robust full-stack applications using modern frameworks and best practices for production-grade deployment',
         'Collaborating with cross-functional engineering teams to architect, review, and ship new product features across frontend and backend layers',
         'Contributing to technical decision-making, code quality improvements, and internal tooling to accelerate development velocity',
         'Participating actively in agile ceremonies including sprint planning, retrospectives, and daily stand-ups to ensure on-time delivery'
       ],
-      technologies: ['React', 'Angular', 'Spring Boot', 'PostgreSQL', 'Agile', 'Git']
+      technologies: ['Next.js', 'NestJS', 'React', 'Angular', 'Spring Boot', 'PostgreSQL', 'Agile', 'Git']
     },
     {
       title: 'Software Engineering Intern',
@@ -26,12 +28,13 @@ const Experience = () => {
       type: 'Internship',
       responsibilities: [
         'Contributed to enterprise-level software development projects within a fast-paced technology company environment',
+        'Designed and implemented the vanuncl.lk Passenger Booking System using Laravel, simplifying scheduling and passenger reservation workflows',
         'Collaborated with senior developers and cross-functional teams to design and deliver scalable software solutions',
         'Implemented modern development practices including code reviews, automated testing, and continuous integration workflows',
         'Gained in-depth exposure to production-grade applications and industry-standard development pipelines',
         'Participated in agile ceremonies and actively contributed to sprint planning, task estimation, and retrospectives'
       ],
-      technologies: ['React', 'Angular', 'Spring Boot', 'MySQL', 'REST API', 'Git', 'Agile'],
+      technologies: ['Laravel', 'React', 'Angular', 'Spring Boot', 'MySQL', 'REST API', 'Git', 'Agile'],
       link: 'https://www.linkedin.com/company/syigen-ltd/posts/?feedView=all'
     },
     {

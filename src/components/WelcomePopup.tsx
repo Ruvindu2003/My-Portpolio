@@ -144,7 +144,7 @@ const WelcomePopup = () => {
                         <span className="text-terminal-green font-bold">Frontend Mastery</span>
                       </div>
                       <p className="text-sm text-terminal-text-main">
-                        React, Angular, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS, Bootstrap, Material-UI
+                        React 18, Next.js, Angular 16+, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS, Bootstrap, Material-UI
                       </p>
                     </div>
 
@@ -154,7 +154,7 @@ const WelcomePopup = () => {
                         <span className="text-terminal-blue font-bold">Backend Excellence</span>
                       </div>
                       <p className="text-sm text-terminal-text-main">
-                        Java, Spring Boot, Spring Security, REST APIs, Node.js, JWT, Hibernate
+                        Java, Spring Boot, NestJS, Laravel, REST APIs, GraphQL, Node.js, Express.js, JWT, Hibernate
                       </p>
                     </div>
 
@@ -164,7 +164,7 @@ const WelcomePopup = () => {
                         <span className="text-terminal-green font-bold">Database & Tools</span>
                       </div>
                       <p className="text-sm text-terminal-text-main">
-                        MySQL, PostgreSQL, MongoDB, Redis, Docker, Git/GitHub, Maven
+                        MySQL, PostgreSQL, MongoDB, Redis, Docker, Git/GitHub, Maven, Postman, Swagger
                       </p>
                     </div>
 
@@ -174,13 +174,13 @@ const WelcomePopup = () => {
                         <span className="text-terminal-blue font-bold">Specializations</span>
                       </div>
                       <p className="text-sm text-terminal-text-main">
-                        Full-Stack Development, Microservices, RESTful Design, Agile/Scrum, TDD
+                        Full-Stack Development, Microservices, RESTful Design, Agile/Scrum, WebSockets
                       </p>
                     </div>
                   </div>
 
                   <p className="text-terminal-text-main">
-                    I am currently contributing to sustainable green-technology initiatives at <span className="text-terminal-green font-bold">eGreen</span> as an Associate Software Engineer, following a successful Software Engineering Internship at <span className="text-terminal-blue font-bold">Syigen (Pvt) Ltd</span>.
+                    I am currently contributing to sustainable green-technology initiatives at <span className="text-terminal-green font-bold">eGreen</span> as an Associate Software Engineer, where I engineered a real-time betting system and a NestJS/Next.js apartment platform. This follows my internship at <span className="text-terminal-blue font-bold">Syigen (Pvt) Ltd</span> where I designed the Laravel-based vanuncl.lk passenger booking system.
                   </p>
 
                   <p className="text-terminal-text-main">
