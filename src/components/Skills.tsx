@@ -8,6 +8,7 @@ const Skills = () => {
       title: 'Frontend Development',
       skills: [
         { name: 'React 18', level: 90 },
+        { name: 'Next.js', level: 85 },
         { name: 'Angular 16+', level: 85 },
         { name: 'JavaScript (ES6+)', level: 90 },
         { name: 'TypeScript', level: 85 },
@@ -23,6 +24,8 @@ const Skills = () => {
       skills: [
         { name: 'Java (8-17)', level: 90 },
         { name: 'Spring Boot', level: 90 },
+        { name: 'NestJS', level: 85 },
+        { name: 'Laravel (PHP)', level: 80 },
         { name: 'Spring Security & JWT', level: 85 },
         { name: 'Hibernate / JPA', level: 85 },
         { name: 'REST APIs & GraphQL', level: 90 },

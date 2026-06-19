@@ -27,9 +27,9 @@ const InteractiveTerminal = ({ onComplete }: InteractiveTerminalProps) => {
 Associate Software Engineer & Full-Stack Developer
 Location: Nuwara Eliya, Sri Lanka
 Status: Associate Software Engineer at eGreen`,
-    skills: `Languages: Java (8-17), JavaScript (ES6+), TypeScript, SQL, HTML/CSS, PHP, Python
-Frontend: React 18, Angular 16+, Vue.js, Tailwind CSS, Bootstrap, Material-UI, Chart.js
-Backend: Spring Boot, Spring Security, REST APIs, Node.js, Express.js, GraphQL, JWT, Hibernate
+    skills: `Languages: Java (8-17), JavaScript (ES6+), TypeScript, PHP, Python, HTML/CSS, SQL
+Frontend: React 18, Next.js, Angular 16+, Vue.js, Tailwind CSS, Bootstrap, Material-UI, Chart.js
+Backend: Spring Boot, NestJS, Laravel, Spring Security, REST APIs, GraphQL, Node.js, Express.js, JWT, Hibernate
 Tools: Git/GitHub, Docker, Maven, Postman, Swagger, Jenkins
 Methodologies: Microservices, RESTful Design, Agile/Scrum, TDD, MVC`,
     projects: `1. Student Internship Management System (Angular + Spring Boot + MySQL + JWT)
@@ -40,7 +40,9 @@ Methodologies: Microservices, RESTful Design, Agile/Scrum, TDD, MVC`,
 6. Library Management System (JavaFX + MySQL + JDBC)
 7. Fitness Tracker (Progressive Web Application)`,
     experience: `eGreen | Associate Software Engineer (December 2025 - Present)
+  -> Projects: Real-time Betting System, Next Nest Apartment Platform
 Syigen (Pvt) Ltd | Software Engineering Intern (June 2025 - December 2025)
+  -> Project: vanuncl.lk Passenger Booking System
 Institute of Computer Engineering Technology | Trainee Software Engineer (March 2024 - Present)
 EVO Plan Platform | Full-Stack Developer (March 2025 - December 2025)`,
     about: `Results-driven Associate Software Engineer with close to 1 year of professional industry experience across internship and full-time roles. Experienced in React, Angular, Spring Boot, and enterprise databases. Currently building green-tech solutions at eGreen.`,
